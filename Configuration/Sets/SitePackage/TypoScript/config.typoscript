@@ -34,3 +34,14 @@ config {
     concatenateJs = 0
     concatenateCss = 0
 }
+
+[backend.user.isAdmin]
+    config{
+        no_cache = 1
+        concatenateJs = 0
+        concatenateCss = 0
+        compressJs = 0
+        compressCss = 0
+        contentObjectExceptionHandler = 0
+    }
+[global]
