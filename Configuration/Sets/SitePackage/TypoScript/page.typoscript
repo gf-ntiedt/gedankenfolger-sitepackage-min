@@ -5,6 +5,15 @@ page = PAGE
 page {
     typeNum = 0
     shortcutIcon = EXT:gedankenfolger_sitepackage_min/Resources/Public/Icons/favicon.ico
+    
+    5 = SCHEMA
+    5 {
+        type = WebSite
+        properties {
+            name.field = title
+            description.field = description
+        }
+    }
 
     10 = PAGEVIEW
     10 {
