@@ -1,2 +1,4 @@
-# gedankenfolger-sitepackage-min
-Minimal site package for development
+Site Package for the project "Gedankenfolger sitepackage min"
+==============================================================
+
+Add some explanation here.
