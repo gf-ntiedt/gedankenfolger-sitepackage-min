@@ -1,0 +1,13 @@
+
+.navbar-toggler {
+    border: 0;
+}
+
+.navbar.gf-navbar-secondary[data-bs-theme] {
+    --bs-navbar-brand-color: var(--bs-secondary);
+    --bs-navbar-brand-hover-color: var(--bs-secondary);
+
+    --bs-navbar-color: var(--bs-secondary);
+    --bs-navbar-hover-color: var(--bs-secondary);
+    --bs-navbar-active-color: var(--bs-secondary);
+}

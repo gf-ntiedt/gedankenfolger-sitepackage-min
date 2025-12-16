@@ -21,6 +21,10 @@ page {
             0 = EXT:gedankenfolger_sitepackage_min/Resources/Private/PageView/
             1 = {$page.pageview.paths}
         }
+        settings{
+            basePath = EXT:gedankenfolger_sitepackage_min/Resources/Public/
+            defaultHeaderType = {$styles.content.defaultHeaderType}
+        }
         dataProcessing {
             10 = files
             10 {
@@ -30,7 +34,7 @@ page {
             20 {
                 levels = 2
                 includeSpacer = 1
-                as = mainnavigation
+                as = navMain
             }
             30 = page-content
         }
@@ -52,7 +56,12 @@ page {
     }
 
     includeCSS {
-        gedankenfolger_sitepackage_min_layout = EXT:gedankenfolger_sitepackage_min/Resources/Public/Css/layout.css
+        bootstrap = EXT:gedankenfolger_sitepackage_min/Resources/Public/Scss/bootstrap.scss
+        bootstrap.outputfile = EXT:gedankenfolger_sitepackage_min/Resources/Public/Css/bootstrap.css
+        bootstrap.sourceMap = true
+        #gedankenfolger_sitepackage = EXT:gedankenfolger_sitepackage_min/Resources/Public/Scss/gf_sitepackage.scss
+        #gedankenfolger_sitepackage.outputfile = EXT:gedankenfolger_sitepackage_min/Resources/Public/Css/gf_sitepackage.css
+        #gedankenfolger_sitepackage.sourceMap = true
     }
 
     includeJSLibs {
@@ -68,6 +77,29 @@ page {
     }
 
     includeJSFooter {
+        bootstrap = EXT:gedankenfolger_sitepackage_min/Resources/Public/JavaScript/Dist/Bootstrap/bootstrap.bundle.min.js
         gedankenfolger_sitepackage_min_scripts = EXT:gedankenfolger_sitepackage_min/Resources/Public/JavaScript/main.js
+    }
+
+    bodyTagCObject = COA
+    bodyTagCObject {
+        10 = TEXT
+        10 {
+            data = page:uid
+            wrap = <body id="page-|"
+        }
+
+        20 = COA
+        20{
+            stdWrap.noTrimWrap = | class="|" data-bs-theme="dark"|
+
+            10 = TEXT
+            10 {
+                value = rootpage
+            }
+        }
+
+        30 = TEXT
+        30.value = >
     }
 }
