@@ -7,13 +7,3 @@ $navbar-light-icon-color: $primary;
 $navbar-dark-icon-color: $primary;
 $navbar-light-toggler-icon-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='#{$navbar-light-icon-color}' stroke-linecap='square' stroke-miterlimit='10' stroke-width='3' d='M4 7h22M4 15h22M4 23h22'/></svg>");
 $navbar-dark-toggler-icon-bg:       url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='#{$navbar-dark-icon-color}' stroke-linecap='square' stroke-miterlimit='10' stroke-width='3' d='M4 7h22M4 15h22M4 23h22'/></svg>");
-
-
-// .navbar.gf-navbar-secondary[data-bs-theme] {
-//     --bs-navbar-brand-color: var(--bs-secondary-color);
-//     --bs-navbar-brand-hover-color: var(--bs-secondary-color);
-
-//     --bs-navbar-color: var(--bs-secondary-color);
-//     --bs-navbar-hover-color: var(--bs-secondary-color);
-//     --bs-navbar-active-color: var(--bs-secondary-color);
-// }

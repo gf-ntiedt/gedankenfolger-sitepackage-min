@@ -91,7 +91,7 @@ page {
 
         20 = COA
         20{
-            stdWrap.noTrimWrap = | class="|" data-bs-theme="dark"|
+            stdWrap.noTrimWrap = | class="|"|
 
             10 = TEXT
             10 {
