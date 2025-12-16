@@ -1,0 +1,13 @@
+categories:
+  GedankenfolgerSitepackage:
+    label: 'Gedankenfolger Sitepackage'
+  GedankenfolgerSitepackage.settings:
+    label: 'Settings'
+    parent: GedankenfolgerSitepackage
+
+settings:
+  GedankenfolgerSitepackage.basePath:
+    label: 'Public base path'
+    type: string
+    default: 'EXT:gedankenfolger_sitepackage_min/Resources/Public/'
+    category: GedankenfolgerSitepackage.settings
