@@ -1,0 +1,30 @@
+#
+# BACKENDLAYOUT: ROOTPAGE
+#
+mod {
+    web_layout {
+        BackendLayouts {
+            rootpage {
+                title = LLL:EXT:gedankenfolger_sitepackage_min/Resources/Private/Language/locallang_be.xlf:backend_layout.rootpage
+                config {
+                    backend_layout {
+                        colCount = 1
+                        rowCount = 1
+                        rows {
+                            1 {
+                                columns {
+                                    1 {
+                                        name = LLL:EXT:gedankenfolger_sitepackage_min/Resources/Private/Language/locallang_be.xlf:backend_layout.column.normal
+                                        colPos = 0
+                                        identifier = main
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                icon = EXT:gedankenfolger_sitepackage_min/Resources/Public/Icons/BackendLayouts/apps-pagetree-folder-root.svg
+            }
+        }
+    }
+}

@@ -1,11 +1,11 @@
 #
-# BACKENDLAYOUT: DEFAULT
+# BACKENDLAYOUT: PAGE
 #
 mod {
     web_layout {
         BackendLayouts {
-            default {
-                title = LLL:EXT:gedankenfolger_sitepackage_min/Resources/Private/Language/locallang_be.xlf:backend_layout.example
+            page {
+                title = LLL:EXT:gedankenfolger_sitepackage_min/Resources/Private/Language/locallang_be.xlf:backend_layout.page
                 config {
                     backend_layout {
                         colCount = 1
@@ -23,7 +23,7 @@ mod {
                         }
                     }
                 }
-                icon = EXT:gedankenfolger_sitepackage_min/Resources/Public/Icons/BackendLayouts/example.svg
+                icon = EXT:gedankenfolger_sitepackage_min/Resources/Public/Icons/BackendLayouts/apps-pagetree-page.svg
             }
         }
     }
