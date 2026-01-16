@@ -1,0 +1,10 @@
+vendor: gedankenfolger
+content-type: content-element
+config:
+  content-element:
+    basics:
+      - Gedankenfolger/Header
+      - TYPO3/Appearance
+    group: default
+    prefixFields: true
+    prefixType: vendor
