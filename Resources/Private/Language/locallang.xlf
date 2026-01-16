@@ -6,6 +6,12 @@
             <authorEmail>niels.tiedt@gedankenfolger.de</authorEmail>
         </header>
         <body>
+            <trans-unit id="widget.title">
+                <source>Gedankenfolger: Content Blocks</source>
+            </trans-unit>
+            <trans-unit id="widget.description">
+                <source>Lists all Content Blocks (ContentElements, PageTypes, RecordTypes) across active extensions.</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

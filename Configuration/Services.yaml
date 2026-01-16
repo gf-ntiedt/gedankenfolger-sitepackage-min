@@ -1,0 +1,21 @@
+# Configuration/Services.yaml
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  Gedankenfolger\GedankenfolgerSitepackageMin\:
+    resource: '../Classes/*'
+
+  dashboard.widget.gedankenfolger_sitepackage_min.contentblocks:
+    class: 'Gedankenfolger\GedankenfolgerSitepackageMin\Dashboard\Widget\ContentBlocksWidget'
+    tags:
+      - name: dashboard.widget
+        identifier: 'gedankenfolger_sitepackage_min_contentblocks'
+        groupNames: 'general'
+        title: 'LLL:EXT:gedankenfolger_sitepackage_min/Resources/Private/Language/locallang.xlf:widget.title'
+        description: 'LLL:EXT:gedankenfolger_sitepackage_min/Resources/Private/Language/locallang.xlf:widget.description'
+        iconIdentifier: 'contentblocks-dashboard'
+        height: 'large'
+        width: 'large'

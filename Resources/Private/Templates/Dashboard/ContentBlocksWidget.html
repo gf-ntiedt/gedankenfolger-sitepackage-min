@@ -1,0 +1,234 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers"
+    xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers" data-namespace-typo3-fluid="true">
+
+    <f:if condition="{count}">
+        <f:then>
+            <div class="widget-content">
+                <div class="widget-content-main">
+                    <p class="pb-3 border-bottom"><strong>{count}</strong> Content Blocks found</p>
+
+                    <f:for each="{grouped}" as="items" key="groupName">
+                        <f:if condition="{items -> f:count()}">
+                            <div class="card">
+                                <div class="card-header">
+                                    {groupName}:
+                                </div>
+                                <div class="card-body">
+                                    <div style="overflow:auto;">
+                                        <div class="table-responsive">
+                                            <table class="table table-hover align-middle">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Title</th>
+                                                        <th>Name</th>
+                                                        <th>typeName</th>
+                                                        <th class="text-end">Used on pages</th>
+                                                        <th class="text-end">Info</th>
+                                                    </tr>
+                                                </thead>
+                                    
+                                                <tbody>
+                                                    <f:for each="{items}" as="item" iteration="it">
+                                                        <f:variable name="collapseInfoId" value="cb-info-{groupName}-{it.index}" />
+                                                        <f:variable name="collapseUsageId" value="cb-usage-{groupName}-{it.index}" />
+                                    
+                                                        <tr>
+                                                            <td>{item.title}</td>
+                                                            <td><code>{item.fullName}</code></td>
+                                                            <td><code>{item.typeName}</code></td>
+                                    
+                                                            <td class="text-end">
+                                                                <f:if condition="{item.usagePages}">
+                                                                    <button type="button" class="btn btn-sm btn-default" data-bs-toggle="collapse"
+                                                                        data-bs-target="#{collapseUsageId}" aria-expanded="false"
+                                                                        aria-controls="{collapseUsageId}" title="Show pages">
+                                                                        <span class="me-1">
+                                                                            {item.usagePages -> f:count()}
+                                                                        </span>
+                                                                        <core:icon identifier="apps-pagetree-category-expand-all" size="small" />
+                                                                    </button>
+                                                                </f:if>
+                                                            </td>
+                                    
+                                                            <td class="text-end">
+                                                                <button type="button" class="btn btn-sm btn-default" data-bs-toggle="collapse"
+                                                                    data-bs-target="#{collapseInfoId}" aria-expanded="false"
+                                                                    aria-controls="{collapseInfoId}" title="Show details">
+                                                                    <core:icon identifier="actions-info" size="small" />
+                                                                </button>
+                                                            </td>
+                                                        </tr>
+                                    
+                                                        <!-- Usage collapse row -->
+                                                        <tr class="border-0">
+                                                            <td colspan="5" class="p-2 border-0">
+                                                                <div class="collapse" id="{collapseUsageId}">
+                                                                    <f:if condition="{item.usagePages}">
+                                                                        <f:then>
+                                                                            <f:render section="tt_content" arguments="{item:item, page: page}" />
+                                                                        </f:then>
+                                                                        <f:else>
+                                                                            <span>-</span>
+                                                                        </f:else>
+                                                                    </f:if>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                    
+                                                        <!-- Info collapse row -->
+                                                        <tr class="border-0">
+                                                            <td colspan="5" class="p-0 border-0">
+                                                                <div class="collapse" id="{collapseInfoId}">
+                                                                    <div class="p-3">
+                                                                        <dl class="row mb-0">
+                                                                            <dt class="col-sm-3">Vendor</dt>
+                                                                            <dd class="col-sm-9">{item.vendor}</dd>
+                                    
+                                                                            <dt class="col-sm-3">Extension</dt>
+                                                                            <dd class="col-sm-9"><code>{item.extensionKey}</code></dd>
+                                    
+                                                                            <dt class="col-sm-3">Table</dt>
+                                                                            <dd class="col-sm-9"><code>{item.table}</code></dd>
+                                    
+                                                                            <dt class="col-sm-3">config.yaml</dt>
+                                                                            <dd class="col-sm-9"><small>{item.configPath}</small></dd>
+                                                                        </dl>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </f:for>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </f:if>
+                    </f:for>
+                </div>
+            </div>
+        </f:then>
+
+        <f:else>
+            <div class="widget-content">
+                <div class="widget-content-main">
+                    <p>No Content Blocks found (no <code>ContentBlocks/*/*/config.yaml</code> in active extensions).</p>
+                </div>
+            </div>
+        </f:else>
+    </f:if>
+
+
+    <f:section name="tt_content">
+        <table class="table table-sm table-hover align-middle mb-0">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>UID</th>
+                    <th class="text-end px-1">
+                        Used on page
+                    </th>
+                    <th class="text-end px-1">
+                        <core:icon identifier="actions-document" size="small" />
+                    </th>
+                    <th class="text-end px-1">
+                        <core:icon identifier="actions-document-edit" size="small" />
+                    </th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <f:for each="{item.usagePages}" as="page">
+                    <f:variable name="collapseTtContentId" value="cb-ttcontent-{page.uid}" />
+                    <tr>
+                        <td>
+                            {page.title}
+                        </td>
+                        <td>
+                            {page.uid}
+                        </td>
+                        <td class="text-end ps-1 pe-2">
+                            <button type="button" class="btn btn-sm btn-default" data-bs-toggle="collapse" data-bs-target="#{collapseTtContentId}"
+                                aria-expanded="false" aria-controls="{collapseTtContentId}" title="Show page">
+                                <span class="me-1">
+                                    {page.contentRecords -> f:count()}
+                                </span>
+                                <core:icon identifier="apps-pagetree-category-expand-all" size="small" />
+                            </button>
+                        </td>
+                        <td class="text-end px-1">
+                            <f:be.link route="web_layout" parameters="{id: page.uid}">
+                                <core:icon identifier="apps-pagetree-drag-move-into" size="small" />
+                            </f:be.link>
+                        </td>
+                        <td class="text-end px-1">
+                            <be:link.editRecord uid="{page.uid}" table="pages">
+                                <core:icon identifier="actions-open" size="small" />
+                            </be:link.editRecord>
+                        </td>
+                    </tr>
+
+                    <tr class="collapse" id="{collapseTtContentId}">
+                        <td colspan="5" class="p-2">
+                            <f:if condition="{page.contentRecords}">
+                                <table class="table table-sm table-hover align-middle">
+                                    <thead>
+                                        <tr>
+                                            <th>Header</th>
+                                            <th>UID</th>
+                                            <th>Language</th>
+                                            <th>Icon</th>
+                                            <th class="text-end px-1">
+                                                <core:icon identifier="actions-document" size="small" />
+                                            </th>
+                                            <th class="text-end px-1">
+                                                <core:icon identifier="actions-document-edit" size="small" />
+                                            </th>
+                                        </tr>
+                                    </thead>
+                            
+                                    <tbody>
+                                        <f:variable name="lastPid" value="0" />
+                                        <f:for each="{page.contentRecords}" as="ce">
+                                            <tr>
+                                                <td class="{f:if(condition:'{lastPid==0}||{lastPid}!=={ce.pid}', else:'ps-5')}">
+                                                    <f:if condition="{ce.header}">
+                                                        {ce.header}
+                                                    </f:if>
+                                                </td>
+                                                <td>
+                                                    {ce.uid}
+                                                </td>
+                                                <td>
+                                                    {ce.sys_language_uid}
+                                                </td>
+                                                <td>
+                                                    <span class="badge text-bg-light">
+                                                        <core:iconForRecord table="tt_content" row="{ce}" size="small" />
+                                                    </span>
+                                                </td>
+                                                <td class="text-end px-1">
+                                                    <f:be.link route="web_layout" parameters="{id: page.uid}">
+                                                        <core:icon identifier="apps-pagetree-drag-move-into" size="small" />
+                                                    </f:be.link>
+                                                </td>
+                                                <td class="text-end ps-1 pe-2">
+                                                    <be:link.editRecord uid="{ce.uid}" table="tt_content">
+                                                        <core:icon identifier="actions-open" size="small" />
+                                                    </be:link.editRecord>
+                                                </td>
+                                            </tr>
+                                            <f:variable name="lastPid" value="{f:if(condition:'{lastPid}!=={ce.pid}', then:ce.pid)}" />
+                                        </f:for>
+                                    </tbody>
+                                </table>
+                            </f:if>
+                        </td>
+                    </tr>
+                </f:for>
+            </tbody>
+        </table>
+    </f:section>
+</html>
