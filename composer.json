@@ -2,7 +2,7 @@
     "name": "gedankenfolger/gedankenfolger-sitepackage-min",
     "type": "typo3-cms-extension",
     "description": "For development",
-    "version": "13.1.1",
+    "version": "13.2.0",
     "homepage": "https://www.gedankenfolger.de/",
     "license": ["GPL-2.0-or-later"],
     "keywords": ["TYPO3 CMS"],
