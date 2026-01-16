@@ -1,0 +1,14 @@
+lib.contentBlock {
+    settings{
+        defaultHeaderType = {$styles.content.defaultHeaderType}
+        space_before_class = {$GedankenfolgerSitepackage.space_before_class}
+        space_after_class = {$GedankenfolgerSitepackage.space_after_class}
+    }
+    variables{
+    }
+    partialRootPaths {
+        100 = EXT:gedankenfolger_sitepackage_min/Resources/Private/ContentElements/Partials/
+    }
+    dataProcessing{
+    }
+}

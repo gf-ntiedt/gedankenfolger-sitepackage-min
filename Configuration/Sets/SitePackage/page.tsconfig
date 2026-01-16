@@ -11,7 +11,29 @@ TCEFORM {
 
     }
     tt_content {
-
+        frame_class.disabled = 1
+        space_before_class {
+            removeItems = extra-small,small,medium,large,extra-large
+            addItems {
+                mt-0 = None
+                mt-1 = 1
+                mt-2 = 2
+                mt-3 = 3
+                mt-4 = 4
+                mt-5 = 5
+            }
+        }
+        space_after_class {
+            removeItems = extra-small,small,medium,large,extra-large
+            addItems {
+                mb-0 = None
+                mb-1 = 1
+                mb-2 = 2
+                mb-3 = 3
+                mb-4 = 4
+                mb-5 = 5
+            }
+        }
     }
 }
 

@@ -1,0 +1,15 @@
+name: gedankenfolger/text
+typeName: gedankenfolger_text
+group: default
+prefixFields: true
+prefixType: full
+fields:
+  - identifier: Gedankenfolger/Header
+    type: Basic
+  -
+    identifier: bodytext
+    useExistingField: true
+    enableRichtext: true
+    richtextConfiguration: full
+  - identifier: TYPO3/Appearance
+    type: Basic

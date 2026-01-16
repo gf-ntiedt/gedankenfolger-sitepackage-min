@@ -4,8 +4,24 @@ categories:
   GedankenfolgerSitepackage.settings:
     label: 'Settings'
     parent: GedankenfolgerSitepackage
+  GedankenfolgerSitepackage.style:
+    label: 'Style'
+    parent: GedankenfolgerSitepackage
 
 settings:
+  GedankenfolgerSitepackage.space_before_class:
+    label: 'Default space before'
+    category: GedankenfolgerSitepackage.style
+    description: ''
+    type: string
+    default: 'mt-5'
+
+  GedankenfolgerSitepackage.space_after_class:
+    label: 'Default space after'
+    category: GedankenfolgerSitepackage.style
+    description: ''
+    type: string
+    default: 'mb-5'
   GedankenfolgerSitepackage.basePath:
     label: 'Public base path'
     type: string

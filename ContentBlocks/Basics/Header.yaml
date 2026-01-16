@@ -1,0 +1,6 @@
+identifier: Gedankenfolger/Header
+fields:
+  - identifier: TYPO3/Header
+    type: Basic
+  - identifier: header_link
+    useExistingField: true
