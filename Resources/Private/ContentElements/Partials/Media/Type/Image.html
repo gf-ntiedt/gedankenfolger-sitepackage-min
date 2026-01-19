@@ -1,0 +1,30 @@
+<f:switch expression="{layout}">
+    <f:case value="carousel">
+        <f:image image="{asset}" class="d-block w-100" alt="{asset.alternative}" />
+
+        <div class="carousel-caption d-none d-md-block">
+            <f:if condition="{asset.title}">
+                <h5>{asset.title}</h5>
+            </f:if>
+            <f:if condition="{asset.description}">
+                <p>{asset.description}</p>
+            </f:if>
+        </div>
+    </f:case>
+    <f:defaultCase>
+        <figure class="figure">
+            <f:image image="{asset}" class="figure-img img-fluid" alt="{asset.alternative}" />
+
+            <f:if condition="{asset.title}||{asset.description}">
+                <figcaption class="figure-caption">
+                    <f:if condition="{asset.title}">
+                        <h5>{asset.title}</h5>
+                    </f:if>
+                    <f:if condition="{asset.description}">
+                        <p>{asset.description}</p>
+                    </f:if>
+                </figcaption>
+            </f:if>
+        </figure>
+    </f:defaultCase>
+</f:switch>

@@ -1,0 +1,47 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:cb="http://typo3.org/ns/TYPO3/CMS/ContentBlocks/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+    <div id="c{data.uid}"
+        class="frame ctype-{data.CType} frame-layout-{data.layout} {f:if(condition:data.space_before_class,then:data.space_before_class,else:settings.space_before_class)} {f:if(condition:data.space_after_class,then:data.space_after_class,else:settings.space_after_class)}">
+        <f:if condition="{data._LOCALIZED_UID}">
+            <a id="c{data._LOCALIZED_UID}"></a>
+        </f:if>
+
+        <f:render partial="Header/All" arguments="{_all}" />
+
+        <f:switch expression="{data.imageorient}">
+            <f:case value="2">
+                <f:render partial="Media/Media" arguments="{_all}" />
+                <f:format.html>{data.bodytext}</f:format.html>
+            </f:case>
+            <f:case value="10">
+                <f:format.html>{data.bodytext}</f:format.html>
+                <f:render partial="Media/Media" arguments="{_all}" />
+            </f:case>
+            <f:case value="25">
+                <div class="row">
+                    <div class="col-6">
+                        <f:format.html>{data.bodytext}</f:format.html>
+                    </div>
+                    <div class="col-6">
+                        <f:render partial="Media/Media" arguments="{_all}" />
+                    </div>
+                </div>
+            </f:case>
+            <f:case value="26">
+                <div class="row">
+                    <div class="col-6">
+                        <f:render partial="Media/Media" arguments="{_all}" />
+                    </div>
+                    <div class="col-6">
+                        <f:format.html>{data.bodytext}</f:format.html>
+                    </div>
+                </div>
+            </f:case>
+        </f:switch>
+
+        
+    </div>
+</html>

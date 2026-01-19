@@ -12,6 +12,12 @@
             <trans-unit id="widget.description">
                 <source>Lists all Content Blocks (ContentElements, PageTypes, RecordTypes) across active extensions.</source>
             </trans-unit>
+            <trans-unit id="prev">
+                <source>Previous</source>
+            </trans-unit>
+            <trans-unit id="next">
+                <source>Next</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

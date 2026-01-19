@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file datatype="plaintext" original="labels.xlf" source-language="en" date="2026-01-16T14:40:58+00:00" product-name="gedankenfolger/text-media">
+		<header/>
+		<body>
+			<trans-unit id="title">
+				<source>Text &amp; Media</source>
+			</trans-unit>
+			<trans-unit id="description">
+				<source>Description for Content Element gedankenfolger/text-media</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

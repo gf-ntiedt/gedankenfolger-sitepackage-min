@@ -1,0 +1,8 @@
+identifier: Gedankenfolger/Assets
+fields:
+  -
+    identifier: assets
+    useExistingField: true
+  -
+    identifier: imageorient
+    useExistingField: true

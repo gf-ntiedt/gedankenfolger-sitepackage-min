@@ -1,0 +1,41 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+    <f:switch expression="{layout}">
+        <f:case value="carousel">
+            <figure class="figure w-100">
+                <div class="ratio ratio-16x9">
+                    <f:media class="img-fluid" file="{asset}" width="{dimensions.width}"height="{dimensions.height}" alt="{asset.alternative}" title="{asset.title}"
+                        additionalAttributes="{loading:'lazy'}" additionalConfig="{settings.media.additionalConfig}" />
+                </div>
+                <f:if condition="{asset.title}||{asset.description}">
+                    <div class="carousel-caption d-none d-md-block">
+                        <f:if condition="{asset.title}">
+                            <h5>{asset.title}</h5>
+                        </f:if>
+                        <f:if condition="{asset.description}">
+                            <p>{asset.description}</p>
+                        </f:if>
+                    </div>
+                </f:if>
+            </figure>
+        </f:case>
+        <f:defaultCase>
+            <figure class="figure w-100">
+                <div class="ratio ratio-16x9">
+                    <f:media class="img-fluid" file="{asset}" width="560" alt="{asset.alternative}" title="{asset.title}"
+                        additionalAttributes="{loading:'lazy'}" additionalConfig="{settings.media.additionalConfig}" />
+                </div>
+                <f:if condition="{asset.title}||{asset.description}">
+                    <figcaption class="figure-caption">
+                        <f:if condition="{asset.title}">
+                            <h5>{asset.title}</h5>
+                        </f:if>
+                        <f:if condition="{asset.description}">
+                            <p>{asset.description}</p>
+                        </f:if>
+                    </figcaption>
+                </f:if>
+            </figure>
+        </f:defaultCase>
+    </f:switch>
+</html>

@@ -1,0 +1,22 @@
+name: gedankenfolger/text-media
+typeName: gedankenfolger_textmedia
+group: default
+prefixFields: true
+prefixType: vendor
+basics:
+  - TYPO3/Appearance
+fields:
+  - identifier: Gedankenfolger/Header
+    type: Basic
+  -
+    identifier: bodytext
+    useExistingField: true
+    enableRichtext: true
+    richtextConfiguration: full
+  -
+    identifier: tab_media
+    type: Tab
+    label: Media
+  -
+    identifier: Gedankenfolger/Assets
+    type: Basic
