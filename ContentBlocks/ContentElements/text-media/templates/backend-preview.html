@@ -1,23 +1,54 @@
-<html
-    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
     xmlns:cb="http://typo3.org/ns/TYPO3/CMS/ContentBlocks/ViewHelpers"
-    data-namespace-typo3-fluid="true"
->
-
-<f:layout name="Preview"/>
+    xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Preview" />
 
 <f:section name="Header">
-    <cb:link.editRecord uid="{data.uid}" table="{data.mainType}">{data.header}</cb:link.editRecord>
+    <f:if condition="{data.header}">
+        <be:link.editRecord uid="{data.uid}" table="tt_content" fields="header">
+            {data.header}
+        </be:link.editRecord>
+    </f:if>
 </f:section>
 
 <f:section name="Content">
-    Preview for Content Block: gedankenfolger/text-media
+    <div id="c{data.uid}" class="{data.CType}">
+        <ul class="list-group">
+            <f:if condition="{data.bodytext}">
+                <li class="list-group-item">
+                    <be:link.editRecord uid="{data.uid}" table="tt_content" fields="gedankenfolger_faq_bodytext" class="btn btn-sm btn-default btn-borderless">
+                        <core:icon identifier="actions-open" size="small" />
+                    </be:link.editRecord>
+                    <be:link.editRecord uid="{data.uid}" table="tt_content" fields="gedankenfolger_faq_bodytext">
+                        <span>{data.bodytext -> f:format.raw()}</span>
+                    </be:link.editRecord>
+                </li>
+            </f:if>
+            <f:if condition="{data.assets}">
+                <li class="list-group-item d-flex justify-content-between">
+                    <be:link.editRecord uid="{data.uid}" table="sys_file_reference" fields="assets"class="btn btn-sm btn-default btn-borderless">
+                        <core:icon identifier="actions-open" size="small" />
+                    </be:link.editRecord>
+                    <div class="list-group flex-row w-100">
+                        <f:for each="{data.assets}" as="asset">
+                            <f:if condition="{asset.properties.hidden}==0">
+                                <be:link.editRecord uid="{asset.uid}" table="sys_file_reference" class="list-group-item list-group-item-action d-flex justify-content-center">
+                                    <f:image image="{asset}" width="100" class="img-thumbnail" />
+                                </be:link.editRecord>
+                            </f:if>
+                        </f:for>
+                    </div>
+                </li>
+            </f:if>
+        </ul>
+    </div>
 </f:section>
 
-<f:comment>
-<!-- Uncomment to override preview footer -->
 <f:section name="Footer">
-    My custom Footer
+    <div class="d-flex justify-content-between">
+        <be:link.editRecord uid="{data.uid}" table="tt_content">UID: {data.uid}</be:link.editRecord>
+        <be:link.editRecord uid="{data.uid}" table="tt_content">PID: {data.pid}</be:link.editRecord>
+    </div>
 </f:section>
-</f:comment>
+
 </html>

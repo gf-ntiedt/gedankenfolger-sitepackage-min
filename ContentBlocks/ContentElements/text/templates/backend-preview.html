@@ -1,23 +1,41 @@
 <html
     xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
     xmlns:cb="http://typo3.org/ns/TYPO3/CMS/ContentBlocks/ViewHelpers"
+    xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers"
     data-namespace-typo3-fluid="true"
 >
-
-<f:layout name="Preview"/>
+<f:layout name="Preview" />
 
 <f:section name="Header">
-    <cb:link.editRecord uid="{data.uid}" table="{data.mainType}">{data.header}</cb:link.editRecord>
+    <f:if condition="{data.header}">
+        <be:link.editRecord uid="{data.uid}" table="tt_content" fields="header">
+            {data.header}
+        </be:link.editRecord>
+    </f:if>
 </f:section>
 
 <f:section name="Content">
-    Preview for Content Block: gedankenfolger/text
+    <div id="c{data.uid}" class="{data.CType}">
+        <ul class="list-group">
+            <f:if condition="{data.bodytext}">
+                <li class="list-group-item d-flex justify-content-between">
+                    <be:link.editRecord uid="{data.uid}" table="tt_content" fields="gedankenfolger_faq_bodytext">
+                        <f:translate key="{cb:languagePath()}:bodytext.label" />
+                    </be:link.editRecord>
+                    <be:link.editRecord uid="{data.uid}" table="tt_content" fields="gedankenfolger_faq_bodytext">
+                        <span>{data.bodytext -> f:format.raw()}</span>
+                    </be:link.editRecord>
+                </li>
+            </f:if>
+        </ul>
+    </div>
 </f:section>
 
-<f:comment>
-<!-- Uncomment to override preview footer -->
 <f:section name="Footer">
-    My custom Footer
+    <div class="d-flex justify-content-between">
+        <be:link.editRecord uid="{data.uid}" table="tt_content">UID: {data.uid}</be:link.editRecord>
+        <be:link.editRecord uid="{data.uid}" table="tt_content">PID: {data.pid}</be:link.editRecord>
+    </div>
 </f:section>
-</f:comment>
+
 </html>
