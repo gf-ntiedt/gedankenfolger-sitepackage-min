@@ -3,8 +3,6 @@ typeName: gedankenfolger_textmedia
 group: default
 prefixFields: true
 prefixType: vendor
-basics:
-  - TYPO3/Appearance
 fields:
   - identifier: Gedankenfolger/Header
     type: Basic
@@ -20,3 +18,46 @@ fields:
   -
     identifier: Gedankenfolger/Assets
     type: Basic
+  -
+    identifier: appearance_tab
+    type: Tab
+    label: LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance
+  -
+    identifier: frames_palette
+    type: Palette
+    label: LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.frames
+    fields:
+      -
+        identifier: layout
+        useExistingField: true
+      -
+        identifier: frame_class
+        useExistingField: true
+      -
+        identifier: space_before_class
+        useExistingField: true
+      -
+        identifier: space_after_class
+        useExistingField: true
+      -
+        type: Linebreak
+      -
+        identifier: grid
+        label: Grid
+        type: Select
+        renderType: selectSingle
+        displayCond:
+          AND:
+            - 'FIELD:imageorient:=:25'
+            - 'FIELD:imageorient:=:26'
+        items:
+          - label: '6 / 6'
+            value: '6_6'
+          - label: '5 / 7'
+            value: '5_7'
+          - label: '4 / 8'
+            value: '4_8'
+          - label: '7 / 5'
+            value: '7_5'
+          - label: '8 / 4'
+            value: '8_4'

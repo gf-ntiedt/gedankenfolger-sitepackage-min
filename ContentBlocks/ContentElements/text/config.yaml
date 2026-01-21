@@ -11,5 +11,5 @@ fields:
     useExistingField: true
     enableRichtext: true
     richtextConfiguration: full
-  - identifier: TYPO3/Appearance
+  - identifier: Gedankenfolger/Appearance
     type: Basic
