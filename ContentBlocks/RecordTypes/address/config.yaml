@@ -1,0 +1,136 @@
+name: gedankenfolger/address
+table: tx_gedankenfolger_address
+title: Gedankenfolger Address
+prefixFields: false
+labelField:
+  - name
+  - city
+  - main
+fields:
+  -
+    identifier: name
+    type: Text
+    label: Name
+    required: true
+    autocomplete: true
+    placeholder: "John Doe GmbH"
+  -
+    identifier: claim
+    type: Text
+    label: Slogan
+    required: false
+    autocomplete: true
+  -
+    identifier: main
+    type: Checkbox
+    renderType: checkboxToggle
+    label: Main address
+    description: Used for logo and footer address
+  -
+    identifier: logo
+    type: File
+    label: Logo
+    appearance:
+      - allowedFileExtensions: "jpg,gif,png,webp"
+  -
+    identifier: assets
+    type: File
+    label: Assets
+    appearance:
+      - allowedFileExtensions: "jpg,gif,png,webp"
+  -
+    identifier: tab_contactdata
+    type: Tab
+    label: Contact data
+  -
+    identifier: street
+    type: Text
+    label: Street
+    required: true
+    autocomplete: true
+    placeholder: "Doe street"
+  -
+    identifier: street_nr
+    type: Text
+    label: House number
+    required: true
+    autocomplete: true
+    placeholder: "1"
+  -
+    identifier: zip
+    type: Text
+    label: ZIP
+    required: true
+    autocomplete: true
+    placeholder: "45785"
+  -
+    identifier: city
+    type: Text
+    label: City
+    required: true
+    autocomplete: true
+    placeholder: "Doe city"
+  -
+    identifier: country
+    type: Text
+    label: Country
+    required: false
+    autocomplete: true
+    placeholder: "Doe land"
+  -
+    identifier: phone
+    type: Text
+    label: Phone
+    required: false
+    autocomplete: true
+    placeholder: "+49 7777 7777-7"
+  -
+    identifier: fax
+    type: Text
+    label: Telefax
+    required: false
+    autocomplete: true
+    placeholder: "+49 7777 7777-8"
+  -
+    identifier: email
+    type: Email
+    label: E-Mail
+    required: false
+    autocomplete: true
+    placeholder: "johndoe@example.com"
+  -
+    identifier: internet
+    type: Text
+    label: Internet
+    required: false
+    eval: domainname
+    autocomplete: true
+    placeholder: "example.com"
+  -
+    identifier: tab_maps
+    type: Tab
+    label: Maps
+  -
+    identifier: maps
+    type: Textarea
+    label: Maps
+    required: false
+  -
+    identifier: tab_texts
+    type: Tab
+    label: Texts
+  -
+    identifier: text
+    type: Textarea
+    label: Text
+    enableRichtext: true
+  -
+    identifier: legal
+    type: Textarea
+    label: Legal
+    enableRichtext: true
+  -
+    identifier: divisions
+    type: Textarea
+    label: Business divisions
+    enableRichtext: true

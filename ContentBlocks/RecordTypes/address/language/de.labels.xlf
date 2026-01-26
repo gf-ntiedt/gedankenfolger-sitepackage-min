@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file datatype="plaintext" original="Labels.xlf" source-language="en" target-language="de" date="2024-02-29T15:42:21+00:00" product-name="gedankenfolger/address">
+		<header/>
+		<body>
+			<trans-unit id="title" resname="title">
+            	<target>Gedankenfolger Adresse</target>
+            </trans-unit>
+            <trans-unit id="name.label" resname="name.label">
+            	<target>Name</target>
+            </trans-unit>
+            <trans-unit id="claim.label" resname="claim.label">
+            	<target>Slogan</target>
+            </trans-unit>
+            <trans-unit id="logo.label" resname="logo.label">
+            	<target>Logo</target>
+            </trans-unit>
+            <trans-unit id="main.label" resname="main.label">
+            	<target>Hauptsitz</target>
+            </trans-unit>
+            <trans-unit id="main.description" resname="main.description">
+            	<target>Wird für Logo und Fußzeilenadresse verwendet</target>
+            </trans-unit>
+            <trans-unit id="tabs.tab_contactdata" resname="tabs.tab_contactdata">
+            	<target>Kontaktdaten</target>
+            </trans-unit>
+            <trans-unit id="street.label" resname="street.label">
+            	<target>Straße</target>
+            </trans-unit>
+            <trans-unit id="street_nr.label" resname="street_nr.label">
+            	<target>Hausnummer</target>
+            </trans-unit>
+            <trans-unit id="zip.label" resname="zip.label">
+            	<target>PLZ</target>
+            </trans-unit>
+            <trans-unit id="city.label" resname="city.label">
+            	<target>Stadt</target>
+            </trans-unit>
+            <trans-unit id="country.label" resname="country.label">
+            	<target>Land</target>
+            </trans-unit>
+            <trans-unit id="phone.label" resname="phone.label">
+            	<target>Telefon</target>
+            </trans-unit>
+            <trans-unit id="fax.label" resname="fax.label">
+            	<target>Telefax</target>
+            </trans-unit>
+            <trans-unit id="email.label" resname="email.label">
+            	<target>E-Mail</target>
+            </trans-unit>
+            <trans-unit id="internet.label" resname="internet.label">
+            	<target>Internet</target>
+            </trans-unit>
+			<trans-unit id="tabs.tab_maps" resname="tabs.tab_maps">
+				<target>Karte</target>
+			</trans-unit>
+			<trans-unit id="maps.label" resname="maps.label">
+				<target>Karte</target>
+			</trans-unit>
+			<trans-unit id="tabs.tab_texts" resname="tabs.tab_texts">
+				<target>Texte</target>
+			</trans-unit>
+            <trans-unit id="text.label" resname="text.label">
+            	<target>Text</target>
+            </trans-unit>
+			<trans-unit id="divisions.label" resname="divisions.label">
+				<target>Bereiche</target>
+			</trans-unit>
+			<trans-unit id="legal.label" resname="legal.label">
+				<target>Rechtliches</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

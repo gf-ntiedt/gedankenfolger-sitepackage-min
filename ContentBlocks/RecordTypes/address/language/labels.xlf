@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file datatype="plaintext" original="Labels.xlf" source-language="en" date="2024-10-07T11:45:40+00:00" product-name="gedankenfolger/address">
+		<header/>
+		<body>
+			<trans-unit id="title" resname="title">
+				<source>Gedankenfolger Address</source>
+			</trans-unit>
+			<trans-unit id="name.label" resname="name.label">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="claim.label" resname="claim.label">
+				<source>Slogan</source>
+			</trans-unit>
+			<trans-unit id="logo.label" resname="logo.label">
+				<source>Logo</source>
+			</trans-unit>
+			<trans-unit id="main.label" resname="main.label">
+				<source>Headquater</source>
+			</trans-unit>
+			<trans-unit id="main.description" resname="main.description">
+				<source>Used for logo and footer address</source>
+			</trans-unit>
+			<trans-unit id="tabs.tab_contactdata" resname="tabs.tab_contactdata">
+				<source>Contact data</source>
+			</trans-unit>
+			<trans-unit id="street.label" resname="street.label">
+				<source>Street</source>
+			</trans-unit>
+			<trans-unit id="street_nr.label" resname="street_nr.label">
+				<source>House number</source>
+			</trans-unit>
+			<trans-unit id="zip.label" resname="zip.label">
+				<source>ZIP</source>
+			</trans-unit>
+			<trans-unit id="city.label" resname="city.label">
+				<source>City</source>
+			</trans-unit>
+			<trans-unit id="country.label" resname="country.label">
+				<source>Country</source>
+			</trans-unit>
+			<trans-unit id="phone.label" resname="phone.label">
+				<source>Phone</source>
+			</trans-unit>
+			<trans-unit id="fax.label" resname="fax.label">
+				<source>Telefax</source>
+			</trans-unit>
+			<trans-unit id="email.label" resname="email.label">
+				<source>E-Mail</source>
+			</trans-unit>
+			<trans-unit id="internet.label" resname="internet.label">
+				<source>Internet</source>
+			</trans-unit>
+			<trans-unit id="tabs.tab_maps" resname="tabs.tab_maps">
+				<source>Maps</source>
+			</trans-unit>
+			<trans-unit id="maps.label" resname="maps.label">
+				<source>Maps</source>
+			</trans-unit>
+			<trans-unit id="tabs.tab_texts" resname="tabs.tab_texts">
+				<source>Texts</source>
+			</trans-unit>
+			<trans-unit id="text.label" resname="text.label">
+				<source>Text</source>
+			</trans-unit>
+			<trans-unit id="divisions.label" resname="divisions.label">
+				<source>Business divisions</source>
+			</trans-unit>
+			<trans-unit id="legal.label" resname="legal.label">
+				<source>Legal</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
