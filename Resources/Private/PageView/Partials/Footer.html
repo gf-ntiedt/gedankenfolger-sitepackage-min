@@ -1,5 +1,73 @@
 <div id="footer" class="container-fluid">
-    <div class="footer-bottom-left">
-        <p>Copyright © Gedankenfolger GmbH</p>
-    </div>
+    <f:if condition="{addressesMain.0}">
+        <f:then>
+            <div class="footer-bottom-left">
+                <p>
+                    <f:render section="Street" arguments="{address:addressesMain.0}" />
+                    <f:render section="City" arguments="{address:addressesMain.0}" />
+                    <f:render section="Phone" arguments="{address:addressesMain.0}" />
+                    <f:render section="Fax" arguments="{address:addressesMain.0}" />
+                    <f:render section="Internet" arguments="{address:addressesMain.0}" />
+                </p>
+                <p>
+                    <f:render section="Copyright" arguments="{address:addressesMain.0}" />
+                </p>
+            </div>
+        </f:then>
+        <f:else>
+            <div class="footer-bottom-left">
+                <p>Copyright © {f:format.date(date:'now',format:'Y')} Gedankenfolger GmbH</p>
+            </div>
+        </f:else>
+    </f:if>
 </div>
+
+
+<f:section name="Street">
+    <f:if condition="{address.data.street} || {address.data.street_nr}">
+        {address.data.street} {address.data.street_nr}<br />
+    </f:if>
+</f:section>
+
+<f:section name="City">
+    <f:if condition="{address.data.zip} || {address.data.city}">
+        {address.data.zip} {address.data.city}<br />
+    </f:if>
+</f:section>
+
+<f:section name="Phone">
+    <f:if condition="{address.data.phone}">
+        <f:variable name="label">
+            <f:translate key="{cb:languagePath(name: 'gedankenfolger/address')}:phone.label" />
+        </f:variable>
+        {label}:
+        <gfv:link.urlscheme number="{address.data.phone}" aria="{label: label}" class="link-white" /><br />
+    </f:if>
+</f:section>
+
+<f:section name="Fax">
+    <f:if condition="{address.data.fax}">
+        <f:variable name="label">
+            <f:translate key="{cb:languagePath(name: 'gedankenfolger/address')}:fax.label" />
+        </f:variable>
+        {label}:
+        <gfv:link.urlscheme number="{address.data.fax}" aria="{label: label}" class="link-white" /><br />
+    </f:if>
+</f:section>
+
+<f:section name="Internet">
+    <f:if condition="{address.data.internet}">
+        <f:variable name="label">
+            <f:translate key="{cb:languagePath(name: 'gedankenfolger/address')}:internet.label" />
+        </f:variable>
+        <f:link.external uri="{address.data.internet}" aria="{label: label}" class="link-white">
+            {address.data.internet}
+        </f:link.external><br />
+    </f:if>
+</f:section>
+
+<f:section name="Copyright">
+    <f:if condition="{address.data.name}">
+        Copyright © {f:format.date(date:'now',format:'Y')} {address.data.name}
+    </f:if>
+</f:section>
