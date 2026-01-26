@@ -15,7 +15,7 @@ TCEFORM {
         space_before_class {
             removeItems = extra-small,small,medium,large,extra-large
             addItems {
-                mt-0 = None
+                mt-0 = LLL:EXT:gedankenfolger_sitepackage_min/Resources/Private/Language/locallang_be.xlf:TCEFORM.tt_content.space_before_class.0
                 mt-1 = 1
                 mt-2 = 2
                 mt-3 = 3
@@ -26,7 +26,7 @@ TCEFORM {
         space_after_class {
             removeItems = extra-small,small,medium,large,extra-large
             addItems {
-                mb-0 = None
+                mb-0 = LLL:EXT:gedankenfolger_sitepackage_min/Resources/Private/Language/locallang_be.xlf:TCEFORM.tt_content.space_after_class.0
                 mb-1 = 1
                 mb-2 = 2
                 mb-3 = 3
@@ -37,10 +37,10 @@ TCEFORM {
         imageorient {
             removeItems = 0,1,8,9,17,18
             altLabels {
-                2 = Above
-                10 = Below
-                25 = Right
-                26 = Left
+                2 = LLL:EXT:gedankenfolger_sitepackage_min/Resources/Private/Language/locallang_be.xlf:TCEFORM.tt_content.imageorient.2
+                10 = LLL:EXT:gedankenfolger_sitepackage_min/Resources/Private/Language/locallang_be.xlf:TCEFORM.tt_content.imageorient.10
+                25 = LLL:EXT:gedankenfolger_sitepackage_min/Resources/Private/Language/locallang_be.xlf:TCEFORM.tt_content.imageorient.25
+                26 = LLL:EXT:gedankenfolger_sitepackage_min/Resources/Private/Language/locallang_be.xlf:TCEFORM.tt_content.imageorient.26
             }
         }
     }
