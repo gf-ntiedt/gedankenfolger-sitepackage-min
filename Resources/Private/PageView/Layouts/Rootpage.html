@@ -1,7 +1,8 @@
 <html xmlns:f="http://typo3.org/ns/fluid/ViewHelpers" xmlns:gfv="http://typo3.org/ns/Gedankenfolger/GedankenfolgerViewhelper/ViewHelpers" data-namespace-typo3-fluid="true">
     <main>
-        <f:render partial="Header" arguments="{site:site,navMain:navMain}" />
+        <f:render partial="Header" arguments="{site:site,navMain:navMain,addressesMain:addressesMain}" />
+        <f:render partial="NavSticky" arguments="{site:site,navSticky:navSticky}" />
         <f:render partial="Main" arguments="{content: content}" />
-        <f:render partial="Footer" arguments="{site:site}" />
+        <f:render partial="Footer" arguments="{page:page,addressesMain:addressesMain}" />
     </main>
 </html>
