@@ -16,10 +16,10 @@
         <ul class="list-group">
             <f:if condition="{data.bodytext}">
                 <li class="list-group-item">
-                    <be:link.editRecord uid="{data.uid}" table="tt_content" fields="gedankenfolger_faq_bodytext" class="btn btn-sm btn-default btn-borderless">
+                    <be:link.editRecord uid="{data.uid}" table="tt_content" fields="bodytext" class="btn btn-sm btn-default btn-borderless">
                         <core:icon identifier="actions-open" size="small" />
                     </be:link.editRecord>
-                    <be:link.editRecord uid="{data.uid}" table="tt_content" fields="gedankenfolger_faq_bodytext">
+                    <be:link.editRecord uid="{data.uid}" table="tt_content" fields="bodytext">
                         <span>{data.bodytext -> f:format.raw()}</span>
                     </be:link.editRecord>
                 </li>

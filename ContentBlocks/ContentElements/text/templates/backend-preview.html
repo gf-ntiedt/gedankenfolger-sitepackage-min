@@ -19,10 +19,10 @@
         <ul class="list-group">
             <f:if condition="{data.bodytext}">
                 <li class="list-group-item d-flex justify-content-between">
-                    <be:link.editRecord uid="{data.uid}" table="tt_content" fields="gedankenfolger_faq_bodytext">
+                    <be:link.editRecord uid="{data.uid}" table="tt_content" fields="bodytext">
                         <f:translate key="{cb:languagePath()}:bodytext.label" />
                     </be:link.editRecord>
-                    <be:link.editRecord uid="{data.uid}" table="tt_content" fields="gedankenfolger_faq_bodytext">
+                    <be:link.editRecord uid="{data.uid}" table="tt_content" fields="bodytext">
                         <span>{data.bodytext -> f:format.raw()}</span>
                     </be:link.editRecord>
                 </li>
