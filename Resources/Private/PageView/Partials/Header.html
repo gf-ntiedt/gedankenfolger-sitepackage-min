@@ -3,8 +3,7 @@
     <div class="container-fluid">
         <f:link.page pageUid="{site.configuration.rootPageId}"
             class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-            <f:image src="{settings.GedankenfolgerSitepackage.basePath}Icons/Extension.svg" base64="1"
-                class="bi me-2" />
+            <f:render partial="Logo" arguments="{addressesMain:addressesMain}" />
             <span class="fs-4">{site.configuration.websiteTitle}</span>
         </f:link.page>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-main"
