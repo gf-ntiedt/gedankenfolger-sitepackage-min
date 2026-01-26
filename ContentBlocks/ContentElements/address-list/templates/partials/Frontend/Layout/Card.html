@@ -1,0 +1,141 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true" xmlns:gfv="http://typo3.org/ns/Gedankenfolger/GedankenfolgerViewhelper/ViewHelpers">
+    <div id="c{uid}" class="col" data-logo="{logo}" data-name="{name}" data-claim="{claim}" data-phone="{phone}" data-fax="{fax}"
+        data-street="{street}" data-street_nr="{street_nr}" data-zip="{zip}" data-city="{city}" data-country="{country}"
+        data-main="{main}" data-email="{email}" data-internet="{internet}">
+        <div class="card mb-3 text-bg-light">
+            <div class="card-header">
+                <f:if condition="{assets}">
+                    <f:then>
+                        <f:render section="Assets" arguments="{assets: assets}" />
+                    </f:then>
+                    <f:else>
+                        <f:if condition="{logo}">
+                            <f:image
+                                src="{logo}"
+                                treatIdAsReference="1"
+                                absolute="1"
+                                title="{name}"
+                                loading="lazy"
+                                class="card-img-top img-fluid mt-3"
+                            />
+                        </f:if>
+                    </f:else>
+                </f:if>
+            </div>
+            <div class="card-body">
+                <f:if condition="{name}">
+                    <h5 class="card-title">{name}</h5>
+                </f:if>
+                <p class="card-text">
+                    <f:if condition="{street} && {street_nr}">
+                        {street} {street_nr}<br>
+                    </f:if>
+                    <f:if condition="{zip} && {city}">
+                        {zip} {city}<br>
+                    </f:if>
+                </p>
+            </div>
+            <div class="list-group list-group-flush">
+                <f:if condition="{phone}">
+                    <f:variable name="label" value="{f:translate(key:'{cb:languagePath(name: \'gedankenfolger/address\')}:phone.label')}" />
+                    <gfv:link.urlscheme
+                        number="{phone}"
+                        aria="{label: label}"
+                        class="list-group-item list-group-item-action list-group-item-light"><i class="fa-solid fa-at"></i> {typoLinkParts}</gfv:link.urlscheme>
+                </f:if>
+                <f:if condition="{fax}">
+                    <f:variable name="label" value="{f:translate(key:'{cb:languagePath(name: \'gedankenfolger/address\')}:fax.label')}" />
+                    <gfv:link.urlscheme
+                        number="{fax}"
+                        scheme="fax:"
+                        aria="{label: label}"
+                        class="list-group-item list-group-item-action list-group-item-light" />
+                </f:if>
+                <f:if condition="{email}">
+                    <f:variable name="label" value="{f:translate(key:'{cb:languagePath(name: \'gedankenfolger/address\')}:email.label')}" />
+                    <f:link.email
+                        email="{email}"
+                        aria="{label: label}"
+                        class="list-group-item list-group-item-action list-group-item-light"><i class="fa-solid fa-at"></i> {email}</f:link.email>
+                </f:if>
+                <f:if condition="{maps}">
+                    <f:variable name="label" value="{f:translate(key:'{cb:languagePath(name: \'gedankenfolger/address\')}:maps.label')}" />
+                    <button type="button" class="list-group-item list-group-item-action list-group-item-light" data-bs-toggle="modal" data-bs-target="#modal-{uid}">
+                        <i class="fa-solid fa-map"></i> {label}
+                    </button>
+
+                </f:if>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="modal-{uid}" tabindex="-1" aria-labelledby="modal-{uid}-Label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header p-3">
+                    <h1 class="modal-title fs-5" id="modal-{uid}-Label">{name}</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-0">
+                    <div class="ratio ratio-16x9">
+                        {maps -> f:format.raw()}
+                    </div>
+                </div>
+                <div class="modal-footer p-3 justify-content-start">
+                    <f:if condition="{street} && {street_nr}">
+                        {street} {street_nr}<br>
+                    </f:if>
+                    <f:if condition="{zip} && {city}">
+                        {zip} {city}<br>
+                    </f:if>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</html>
+
+
+
+
+<f:section name="Assets">
+    <f:if condition="!{srcset}">
+        <f:variable name="srcset" value="576,768,992" />
+    </f:if>
+    <f:if condition="!{sizes}">
+        <f:variable name="sizes" value="(max-width: 576px) 576px, (max-width: 768px) 768px, (max-width: 992px) 992px" />
+    </f:if>
+    <f:for each="{assets}" as="asset">
+        <f:switch expression="{asset.originalFile.properties.type}">
+            <f:case value="2">
+                <figure class="figure">
+                    <f:link.typolink parameter="{asset.link}">
+                        <sms:image image="{asset}" fileExtension="webp" srcset="{srcset}" sizes="{sizes}" title="{asset.originalResource.title}" alt="{asset.originalResource.alternative}" loading="{settings.list.media.image.lazyLoading}" maxWidth="{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else: settings.list.media.image.maxWidth)}" maxHeight="{f:if(condition: settings.media.maxHeight, then: settings.media.maxHeight, else: settings.list.media.image.maxHeight)}" absolute="1" class="figure-img img-fluid" />
+                    </f:link.typolink>
+                    <f:if condition="{asset.description}">
+                        <figcaption class="figure-caption">{asset.description}</figcaption>
+                    </f:if>
+                </figure>
+            </f:case>
+            <f:case value="4">
+                <figure class="figure w-100">
+                    <div class="ratio ratio-16x9">
+                        <f:media
+                            class="img-fluid" file="{asset}"
+                            width="560"
+                            alt="{asset.alternative}"
+                            title="{asset.title}"
+                            additionalAttributes="{loading:'lazy'}"
+                            additionalConfig="{settings.media.additionalConfig}"
+                        />
+                    </div>
+                    <f:if condition="{asset.description}">
+                        <figcaption class="figure-caption d-inline-block">{asset.description}</figcaption>
+                    </f:if>
+                </figure>
+            </f:case>
+        </f:switch>
+    </f:for>
+
+</f:section>

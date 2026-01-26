@@ -1,0 +1,18 @@
+<f:alias map="{
+        pid: data.pid,
+        uid: data.uid,
+        cType: data.CType,
+        colPos: data.colPos,
+        space_before_class: data.space_before_class,
+        space_after_class: data.space_after_class,
+    }">
+    <div id="c{uid}" class="{cType} colpos-{colPos} container-fluid {f:if(condition:space_before_class,then:space_before_class,else:settings.space_before_class)} {f:if(condition:space_after_class,then:space_after_class,else:settings.space_after_class)}">
+        <div class="row">
+            <div class="col-22 offset-1">
+                <div class="row">
+                    {content -> f:format.raw()}
+                </div>
+            </div>
+        </div>
+    </div>
+</f:alias>

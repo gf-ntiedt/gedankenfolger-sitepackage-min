@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file datatype="plaintext" original="labels.xlf" source-language="en" target-language="de" date="2024-02-28T08:41:32+00:00" product-name="address-list">
+		<header/>
+		<body>
+			<trans-unit id="title" resname="title">
+				<target>Gedankenfolger: Adressliste</target>
+			</trans-unit>
+			<trans-unit id="addresses.label" resname="addresses.label">
+				<target>Gedankenfolger: Adressliste</target>
+			</trans-unit>
+			<trans-unit id="header.label" resname="header.label">
+				<target>Überschrift</target>
+			</trans-unit>
+			<trans-unit id="addresses_sys_record.label" resname="addresses_sys_record.label">
+				<target>Adressen von</target>
+			</trans-unit>
+			<trans-unit id="layout.label" resname="layout.label">
+				<target>Darstellung</target>
+			</trans-unit>
+			<trans-unit id="layout.items.simple.label" resname="layout.items.simple.label">
+				<target>Einfach</target>
+			</trans-unit>
+			<trans-unit id="layout.items.card.label" resname="layout.items.card.label">
+				<target>Karte</target>
+			</trans-unit>
+			<trans-unit id="layout.items.imprint.label" resname="layout.items.imprint.label">
+				<target>Impressum</target>
+			</trans-unit>
+			<trans-unit id="layout.items.search.label" resname="layout.items.search.label">
+				<target>Suche</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

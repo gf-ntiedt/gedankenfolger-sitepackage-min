@@ -1,0 +1,27 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:be="TYPO3\CMS\Backend\ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+    <f:asset.css identifier="content-block-gedankenfolger-gedankenfolger/address-list-be" href="{cb:assetPath()}/EditorPreview.css"/>
+
+    <div id="{data.CType}_{data.uid}" class="{data.CType} container-fluid mb-3">
+        <div class="vstack gap-2">
+            <f:if condition="{data.header}">
+                <div class="">
+                    {f:translate(key:'{cb:languagePath()}:header')}: {data.header}
+                </div>
+            </f:if>
+            <f:if condition="{data.gedankenfolger_addresslist_addresses_sys_record}">
+                <div class="">
+                    {f:translate(key:'{cb:languagePath()}:addresses_sys_record.label')}: {data.gedankenfolger_addresslist_addresses_sys_record}
+                </div>
+            </f:if>
+            <f:if condition="{data.gedankenfolger_addresslist_layout}">
+                <div class="">
+                    {f:translate(key:'{cb:languagePath()}:layout.label')}: {f:translate(key:'{cb:languagePath()}:layout.items.{data.gedankenfolger_addresslist_layout}.label')}
+                </div>
+            </f:if>
+        </div>
+    </div>
+</html>

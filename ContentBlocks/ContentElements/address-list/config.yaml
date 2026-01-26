@@ -1,0 +1,50 @@
+name: gedankenfolger/address-list
+typeName: gedankenfolger_addresslist
+group: default
+prefixFields: true
+prefixType: full
+fields:
+  -
+    identifier: TYPO3/Header
+    type: Basic
+    useExistingField: true
+
+  - identifier: addresses_sys_record
+    type: Relation
+    label: Addresses from
+    allowed: 'pages'
+  -
+    identifier: appearance_tab
+    type: Tab
+    label: LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance
+  -
+    identifier: frames_palette
+    type: Palette
+    label: LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.frames
+    fields:
+      -
+        identifier: layout
+        useExistingField: true
+        default: 'simple'
+        items:
+          - label: 'Simple'
+            value: simple
+          - label: 'Card'
+            value: card
+          - label: 'Imprint'
+            value: imprint
+      -
+        identifier: frame_class
+        useExistingField: true
+      -
+        identifier: space_before_class
+        useExistingField: true
+      -
+        identifier: space_after_class
+        useExistingField: true
+  -
+    identifier: search
+    type: Checkbox
+    renderType: checkboxToggle
+    label: 'Slider: Search'
+    default: '0'

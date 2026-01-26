@@ -1,0 +1,105 @@
+<f:spaceless>
+    <f:render partial="Header/Header" arguments="{
+                    header: data.header,
+                    layout: data.header_layout,
+                    positionClass: '{f:if(condition: data.header_position, then: \'ce-headline-{data.header_position}\')}',
+                    default: settings.defaultHeaderType}" />
+    <f:if condition="{addresses_from}">
+        <f:then>
+            <f:render partial="Frontend/BaseWrap" arguments="{
+                settings:settings,
+                data:data
+            }" contentAs="content">
+                <f:if condition="{data.search}">
+                    <f:render section="Search" arguments="{
+                        addresses:addresses_from,
+                        data:data
+                    }" />
+                </f:if>
+                <f:render section="{data.layout -> f:format.case(mode:'capital')}" arguments="{
+                    addresses:addresses_from,
+                    layout:data.layout,
+                    data:data
+                }" />
+            </f:render>
+        </f:then>
+        <f:else if="{addresses}">
+            <f:render partial="Frontend/BaseWrap" arguments="{
+                settings:settings,
+                data:data
+            }" contentAs="content">
+                <f:if condition="{data.search}">
+                    <f:render section="Search" arguments="{
+                        addresses:addresses,
+                        data:data
+                    }" />
+                </f:if>
+                <f:render section="{data.layout -> f:format.case(mode:'capital')}" arguments="{
+                    addresses:addresses,
+                    layout:data.layout,
+                    data:data
+                }" />
+            </f:render>
+        </f:else>
+    </f:if>
+
+    <f:if condition="{data.search}">
+        <f:asset.script identifier="content-block-js-gedankenfolger-gedankenfolger/address-list" src="{cb:assetPath()}/Frontend.js"/>
+    </f:if>
+</f:spaceless>
+
+<f:section name="JsCss">
+    <f:asset.css identifier="content-block-css-gedankenfolger-gedankenfolger/address-list" href="{cb:assetPath()}/Frontend.css"/>
+</f:section>
+
+<f:section name="Search">
+    <f:if condition="{addresses -> f:count() > 1}">
+        <div class="btn-toolbar mb-3" role="toolbar" aria-label=" ">
+            <div class="input-group">
+                <div class="input-group-text" id="{data.CType}-search-label"><f:translate key="{cb:languagePath()}:layout.items.search.label"/>:</div>
+                <input type="text" id="{data.CType}-search-input" class="form-control" placeholder="Filter"
+                    aria-label="Filter" aria-describedby="{data.CType}-search-label">
+            </div>
+        </div>
+    </f:if>
+</f:section>
+
+<f:section name="Simple">
+    <div class="d-flex align-items-center">
+        <f:for each="{addresses}" as="address">
+            <f:render partial="Frontend/Element" arguments="{address:address,layout:layout,data:data}" />
+        </f:for>
+    </div>
+</f:section>
+
+<f:section name="Card">
+    <f:comment>
+        <div class="row g-4 cols">
+            <f:for each="{addresses}" as="address">
+                <f:if condition="{address.data.main}">
+                    <f:render partial="Frontend/Element" arguments="{address:address,layout:layout,data:data}" />
+                </f:if>
+            </f:for>
+        </div>
+        <div class="row row-cols-1 row-cols-xsm-2 row-cols-sm-3 row-cols-md-4 g-4 cols">
+            <f:for each="{addresses}" as="address">
+                <f:if condition="!{address.data.main}">
+                    <f:render partial="Frontend/Element" arguments="{address:address,layout:layout,data:data}" />
+                </f:if>
+            </f:for>
+        </div>
+    </f:comment>
+    <div class="row row-cols-1 row-cols-xsm-2 row-cols-sm-3 row-cols-md-4 g-4 cols">
+        <f:for each="{addresses}" as="address">
+            <f:render partial="Frontend/Element" arguments="{address:address,layout:layout,data:data}" />
+        </f:for>
+    </div>
+</f:section>
+
+<f:section name="Imprint">
+    <div class="d-flex align-items-center">
+        <f:for each="{addresses}" as="address">
+            <f:render partial="Frontend/Element" arguments="{address:address,layout:layout,data:data}" />
+        </f:for>
+    </div>
+</f:section>

@@ -1,0 +1,40 @@
+<html xmlns:gfv="http://typo3.org/ns/Gedankenfolger/GedankenfolgerViewhelper/ViewHelpers"
+    data-namespace-typo3-fluid="true">
+    <address id="c{uid}" class="flex-fill" data-logo="{logo}" data-name="{name}" data-claim="{claim}" data-phone="{phone}" data-fax="{fax}"
+        data-street="{street}" data-street_nr="{street_nr}" data-zip="{zip}" data-city="{city}" data-country="{country}"
+        data-main="{main}" data-email="{email}" data-internet="{internet}">
+        <f:if condition="{name}">
+            <strong>{name}</strong><br>
+        </f:if>
+        <f:if condition="{street} && {street_nr}">
+            {street} {street_nr}<br>
+        </f:if>
+        <f:if condition="{zip} && {city}">
+            {zip} {city}<br>
+        </f:if>
+        <f:if condition="{phone}">
+            <f:variable name="label" value="{f:translate(key:'{cb:languagePath(name: \'gedankenfolger/address\')}:phone.label')}" />
+            {label}:
+            <gfv:link.urlscheme number="{phone}"
+                aria="{label: label}" class="" /><br>
+        </f:if>
+        <f:if condition="{fax}">
+            <f:variable name="label" value="{f:translate(key:'{cb:languagePath(name: \'gedankenfolger/address\')}:fax.label')}" />
+            {label}:
+            <gfv:link.urlscheme number="{fax}" scheme="fax:"
+                aria="{label: label}" class="" /><br>
+        </f:if>
+        <br />
+        <f:if condition="{email}">
+            <f:variable name="label" value="{f:translate(key:'{cb:languagePath(name: \'gedankenfolger/address\')}:email.label')}" />
+            {label}:
+            <f:link.email email="{email}"
+                aria="{label: label}" class="" /><br>
+        </f:if>
+        <f:if condition="{internet}">
+            <f:variable name="label" value="{f:translate(key:'{cb:languagePath(name: \'gedankenfolger/address\')}:internet.label')}" />
+            {label}:
+            <f:link.external uri="{internet}" target="_blank">{internet}</f:link.external>
+        </f:if>
+    </address>
+</html>

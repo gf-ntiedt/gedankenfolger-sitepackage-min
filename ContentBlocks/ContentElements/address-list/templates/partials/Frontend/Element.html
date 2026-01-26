@@ -1,0 +1,22 @@
+<f:render partial="Frontend/Layout/{layout -> f:format.case(mode:'capital')}" arguments="{
+    data:       data,
+    uid:       '{f:if(condition:address.uid,then:address.uid,else:address.data.uid)}',
+    logo:       '{f:if(condition:address.logo,then:address.logo,else:address.data.logo)}',
+    assets:       '{f:if(condition:address.assets,then:address.assets,else:address.data.assets)}',
+    name:       '{f:if(condition:address.name,then:address.name,else:address.data.name)}',
+    claim:      '{f:if(condition:address.claim,then:address.claim,else:address.data.claim)}',
+    phone:      '{f:if(condition:address.phone,then:address.phone,else:address.data.phone)}',
+    fax:        '{f:if(condition:address.fax,then:address.fax,else:address.data.fax)}',
+    street:     '{f:if(condition:address.street,then:address.street,else:address.data.street)}',
+    street_nr:  '{f:if(condition:address.street_nr,then:address.street_nr,else:address.data.street_nr)}',
+    zip:        '{f:if(condition:address.zip,then:address.zip,else:address.data.zip)}',
+    city:       '{f:if(condition:address.city,then:address.city,else:address.data.city)}',
+    country:    '{f:if(condition:address.country,then:address.country,else:address.data.country)}',
+    main:       '{f:if(condition:address.main,then:address.main,else:address.data.main)}',
+    email:      '{f:if(condition:address.email,then:address.email,else:address.data.email)}',
+    internet:   '{f:if(condition:address.internet,then:address.internet,else:address.data.internet)}',
+    maps:   '{f:if(condition:address.maps,then:address.maps,else:address.data.maps)}',
+    divisions:   '{f:if(condition:address.divisions,then:address.divisions,else:address.data.divisions)}'
+}">
+
+</f:render>
