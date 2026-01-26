@@ -18,6 +18,24 @@
             <trans-unit id="backend_layout.column.normal">
                 <source>Normal</source>
             </trans-unit>
+            <trans-unit id="TCEFORM.tt_content.space_before_class.0">
+                <source>None</source>
+            </trans-unit>
+            <trans-unit id="TCEFORM.tt_content.space_after_class.0">
+                <source>None</source>
+            </trans-unit>
+            <trans-unit id="TCEFORM.tt_content.imageorient.2">
+                <source>Above</source>
+            </trans-unit>
+            <trans-unit id="TCEFORM.tt_content.imageorient.10">
+                <source>Below</source>
+            </trans-unit>
+            <trans-unit id="TCEFORM.tt_content.imageorient.25">
+                <source>Right</source>
+            </trans-unit>
+            <trans-unit id="TCEFORM.tt_content.imageorient.26">
+                <source>Left</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>
