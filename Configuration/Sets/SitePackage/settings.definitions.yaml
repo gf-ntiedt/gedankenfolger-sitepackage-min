@@ -4,8 +4,14 @@ categories:
   GedankenfolgerSitepackage.settings:
     label: 'Settings'
     parent: GedankenfolgerSitepackage
+  GedankenfolgerSitepackage.menus:
+    label: 'Menus'
+    parent: GedankenfolgerSitepackage
   GedankenfolgerSitepackage.style:
     label: 'Style'
+    parent: GedankenfolgerSitepackage
+  GedankenfolgerSitepackage.address:
+    label: 'Address'
     parent: GedankenfolgerSitepackage
 
 settings:
@@ -27,3 +33,38 @@ settings:
     type: string
     default: 'EXT:gedankenfolger_sitepackage_min/Resources/Public/'
     category: GedankenfolgerSitepackage.settings
+
+  GedankenfolgerSitepackage.navSticky:
+    label: 'Sticky menu root uid'
+    description: 'The sysfolder which holds the pages for the menu'
+    category: GedankenfolgerSitepackage.menus
+    type: int
+    default: 0
+
+  GedankenfolgerSitepackage.navSocial:
+    label: 'Social menu root uid'
+    description: 'The sysfolder which holds the pages for the menu'
+    category: GedankenfolgerSitepackage.menus
+    type: int
+    default: 0
+
+  GedankenfolgerSitepackage.navFooter1:
+    label: 'Footer 1 root uid'
+    description: 'The sysfolder which holds the pages for the menu'
+    category: GedankenfolgerSitepackage.menus
+    type: int
+    default: 0
+
+  GedankenfolgerSitepackage.navFooter2:
+    label: 'Footer 2 root uid'
+    description: 'The sysfolder which holds the pages for the menu'
+    category: GedankenfolgerSitepackage.menus
+    type: int
+    default: 0
+
+  GedankenfolgerSitepackage.sysfolder_uid:
+    label: 'Address sysfolder uid'
+    category: GedankenfolgerSitepackage.address
+    description: 'Folder which holds the address entries'
+    type: int
+    default: 38
