@@ -6,6 +6,21 @@
             <authorEmail>niels.tiedt@gedankenfolger.de</authorEmail>
         </header>
         <body>
+            <trans-unit id="pages.gedankenfolger_nav_main">
+                <source>Main-Navigation</source>
+            </trans-unit>
+            <trans-unit id="pages.gedankenfolger_iconclass">
+                <source>Icon class</source>
+            </trans-unit>
+            <trans-unit id="pages.gedankenfolger_iconclass.description">
+                <source>E.g.: fa-solid fa-user</source>
+            </trans-unit>
+            <trans-unit id="pages.gedankenfolger_icon">
+                <source>Icon</source>
+            </trans-unit>
+            <trans-unit id="pages.gedankenfolger_icon.description">
+                <source>Overwrites icon class</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>
