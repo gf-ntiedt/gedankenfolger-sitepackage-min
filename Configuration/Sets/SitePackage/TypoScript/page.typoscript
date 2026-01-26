@@ -5,7 +5,7 @@ page = PAGE
 page {
     typeNum = 0
     shortcutIcon = EXT:gedankenfolger_sitepackage_min/Resources/Public/Icons/favicon.ico
-    
+
     5 = SCHEMA
     5 {
         type = WebSite
@@ -17,6 +17,7 @@ page {
 
     10 = PAGEVIEW
     10 {
+
         paths {
             0 = EXT:gedankenfolger_sitepackage_min/Resources/Private/PageView/
             1 = {$page.pageview.paths}
@@ -25,6 +26,8 @@ page {
             basePath = EXT:gedankenfolger_sitepackage_min/Resources/Public/
             defaultHeaderType = {$styles.content.defaultHeaderType}
         }
+        variables{
+        }
         dataProcessing {
             10 = files
             10 {
@@ -32,11 +35,108 @@ page {
             }
             20 = menu
             20 {
-                levels = 2
-                includeSpacer = 1
+                levels = 3
+                includeSpacer = 0
                 as = navMain
+                dataProcessing {
+                    10 = files
+                    10 {
+                        references.fieldName = media
+                    }
+                    20 = files
+                    20 {
+                        references.fieldName = gedankenfolger_sitepackage_icon
+                        as = icon
+                    }
+                }
             }
-            30 = page-content
+            30 = menu
+            30 {
+                special = rootline
+                special.range = 0|-1
+                includeNotInMenu = 0
+                as = navBreadcrumb
+            }
+            40 = menu
+            40 {
+                special = directory
+                special.value = {$GedankenfolgerSitepackage.navSticky}
+                as = navSticky
+                dataProcessing {
+                    10 = files
+                    10 {
+                        references.fieldName = media
+                    }
+                    20 = files
+                    20 {
+                        references.fieldName = gedankenfolger_sitepackage_icon
+                        as = icon
+                    }
+                }
+            }
+            50 = menu
+            50 {
+                special = directory
+                special.value = {$GedankenfolgerSitepackage.navFooter1}
+                levels = 3
+                includeSpacer = 0
+                as = navFooter1
+                dataProcessing {
+                    10 = files
+                    10 {
+                        references.fieldName = media
+                    }
+                    20 = files
+                    20 {
+                        references.fieldName = gedankenfolger_sitepackage_icon
+                        as = icon
+                    }
+                }
+            }
+            55 = menu
+            55 {
+                special = directory
+                special.value = {$GedankenfolgerSitepackage.navFooter2}
+                levels = 3
+                includeSpacer = 0
+                as = navFooter2
+                dataProcessing {
+                    10 = files
+                    10 {
+                        references.fieldName = media
+                    }
+                    20 = files
+                    20 {
+                        references.fieldName = gedankenfolger_sitepackage_icon
+                        as = icon
+                    }
+                }
+            }
+            100 = database-query
+            100 {
+                table = tx_gedankenfolger_address
+                where = ({#main} = 1)
+                orderBy = name
+                pidInList = {$GedankenfolgerSitepackage.sysfolder_uid}
+                as = addressesMain
+                dataProcessing {
+                    10 = files
+                    10 {
+                        references.fieldName = logo
+                        as = logo
+                    }
+                    20 = files
+                    20 {
+                        references.fieldName = assets
+                    }
+                }
+            }
+            102 < .100
+            102{
+                where >
+                as = addresses
+            }
+            200 = page-content
         }
     }
 
