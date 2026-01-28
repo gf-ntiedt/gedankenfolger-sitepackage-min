@@ -47,17 +47,25 @@ fields:
         type: Select
         renderType: selectSingle
         displayCond:
-          AND:
+          OR:
             - 'FIELD:imageorient:=:25'
             - 'FIELD:imageorient:=:26'
         items:
-          - label: '6 / 6'
-            value: '6_6'
-          - label: '5 / 7'
-            value: '5_7'
-          - label: '4 / 8'
-            value: '4_8'
-          - label: '7 / 5'
-            value: '7_5'
-          - label: '8 / 4'
-            value: '8_4'
+          - label: '16 / 8'
+            value: '16_8'
+          - label: '15 / 9'
+            value: '15_9'
+          - label: '14 / 10'
+            value: '14_10'
+          - label: '13 / 11'
+            value: '13_11'
+          - label: '12 / 12'
+            value: '12_12'
+          - label: '11 / 13'
+            value: '11_13'
+          - label: '10 / 14'
+            value: '10_14'
+          - label: '9 / 15'
+            value: '9_15'
+          - label: '8 / 16'
+            value: '8_16'
