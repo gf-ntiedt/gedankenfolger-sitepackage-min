@@ -1,0 +1,31 @@
+<f:spaceless>
+    <f:switch expression="{ttContentData.layout}">
+        <f:case value="10">
+            <section class="tx-powermail">
+                <f:render section="main" />
+            </section>
+        </f:case>
+        <f:case value="20">
+            <section class="tx-powermail">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-20 offset-2">
+                            <f:render section="main" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </f:case>
+        <f:defaultCase>
+            <section class="tx-powermail">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-24">
+                            <f:render section="main" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </f:defaultCase>
+    </f:switch>
+</f:spaceless>
