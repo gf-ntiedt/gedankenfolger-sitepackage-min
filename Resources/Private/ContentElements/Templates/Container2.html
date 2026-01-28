@@ -1,0 +1,32 @@
+{namespace gf=Gedankenfolger\GfSitepackage\ViewHelpers}
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:container="http://typo3.org/ns/B13/Container/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+    <f:alias map="{
+    pid: data.pid,
+    uid: data.uid,
+    colPos: data.colPos,
+    space_before_class: data.space_before_class,
+    space_after_class: data.space_after_class,
+    container: data.gedankenfolger_sitepackage_container,
+}">
+        <div id="c{uid}" class="gedankenfolger-2columns colpos-{colPos} {f:if(condition:space_before_class,then:space_before_class,else:defaultSpaceBeforeType)} {f:if(condition:space_after_class,then:space_after_class,else:defaultSpaceAfterType)}">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12 my-3">
+                        <f:for each="{content_200}" as="record">
+                            <f:format.raw>{record.renderedContent}</f:format.raw>
+                        </f:for>
+                    </div>
+                    <div class="col-md-12 my-3">
+                        <f:for each="{content_210}" as="record">
+                            <f:format.raw>{record.renderedContent}</f:format.raw>
+                        </f:for>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </f:alias>
+</html>

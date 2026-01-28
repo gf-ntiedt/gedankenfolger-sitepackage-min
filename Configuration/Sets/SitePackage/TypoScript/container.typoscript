@@ -1,0 +1,34 @@
+tt_content.gedankenfolger-container-1 < lib.contentElement
+tt_content.gedankenfolger-container-1 {
+    templateName = Container1
+    templateRootPaths {
+        10 = EXT:gedankenfolger_sitepackage_min/Resources/Private/ContentElements/Templates/
+    }
+    dataProcessing {
+        200 = B13\Container\DataProcessing\ContainerProcessor
+        200 {
+            colPos = 200
+            as = content_200
+        }
+    }
+}
+
+tt_content.gedankenfolger-container-2 < lib.contentElement
+tt_content.gedankenfolger-container-2 {
+    templateName = Container2
+    templateRootPaths {
+        10 = EXT:gedankenfolger_sitepackage_min/Resources/Private/ContentElements/Templates/
+    }
+    dataProcessing {
+        200 = B13\Container\DataProcessing\ContainerProcessor
+        200 {
+            colPos = 200
+            as = content_200
+        }
+        201 = B13\Container\DataProcessing\ContainerProcessor
+        201 {
+            colPos = 210
+            as = content_210
+        }
+    }
+}

@@ -12,9 +12,15 @@ $containers = [
       ], //grid configuration
       //optional keys:
       'icon' => 'EXT:container/Resources/Public/Icons/container-1col.svg',
+      'gridTemplate' => 'EXT:container/Resources/Private/Templates/Grid.html',
+      'registerInNewContentElementWizard' => true,
+      'saveAndCloseInNewContentElementWizard' => true,
       'group' => 'Gedankenfolger Container',
       'header' => true,
+      'bodytext' => false,
+      'media' => false,
       'settings' => true,
+      'flexform' => false,
   ],
   'gedankenfolger-container-2' => [
       'label' => '2 Column Container',
@@ -27,9 +33,15 @@ $containers = [
       ], //grid configuration
       //optional keys:
       'icon' => 'EXT:container/Resources/Public/Icons/container-2col.svg',
+      'gridTemplate' => 'EXT:container/Resources/Private/Templates/Grid.html',
+      'registerInNewContentElementWizard' => true,
+      'saveAndCloseInNewContentElementWizard' => true,
       'group' => 'Gedankenfolger Container',
       'header' => true,
+      'bodytext' => false,
+      'media' => false,
       'settings' => true,
+      'flexform' => false,
   ]
 ];
 
