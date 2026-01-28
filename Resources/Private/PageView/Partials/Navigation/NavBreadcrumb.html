@@ -1,0 +1,24 @@
+<html xmlns:gf="http://typo3.org/ns/Gedankenfolger/GedankenfolgerSitepackage/ViewHelpers"
+    data-namespace-typo3-fluid="true">
+    <f:if condition="{navBreadcrumb}">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <f:for each="{navBreadcrumb}" as="menuItem" iteration="iterator">
+                    <f:if condition="{menuItem.active}">
+                        <f:then>
+                            <li class="breadcrumb-item active" aria-current="page">{menuItem.title}</li>
+                        </f:then>
+                        <f:else>
+                            <li class="breadcrumb-item">
+                                <f:link.typolink parameter="{menuItem.link}" additionalAttributes="{aria-label: menuItem.title,rel:'noreferrer'}"
+                                    class="">
+                                    {menuItem.title}
+                                </f:link.typolink>
+                            </li>
+                        </f:else>
+                    </f:if>
+                </f:for>
+            </ol>
+        </nav>
+    </f:if>
+</html>
