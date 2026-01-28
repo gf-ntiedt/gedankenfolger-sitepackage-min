@@ -1,0 +1,6 @@
+lib.contentElement{
+    settings{
+        space_before_class = {$GedankenfolgerSitepackage.space_before_class}
+        space_after_class = {$GedankenfolgerSitepackage.space_after_class}
+    }
+}
