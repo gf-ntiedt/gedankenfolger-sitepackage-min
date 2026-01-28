@@ -11,3 +11,186 @@
     --bs-navbar-hover-color: var(--bs-secondary);
     --bs-navbar-active-color: var(--bs-secondary);
 }
+
+.frame-type-powermail_pi1 {
+    &.frame-layout-0 {
+        section.tx-powermail {
+            overflow: hidden;
+            position: relative;
+
+            &::after {
+                top: unset;
+                bottom: 10rem;
+
+                @media (max-width: 1800px) {
+                    height: 50px;
+                    left: #{map-get($spacers, 6)};
+                }
+            }
+
+            .form-check-label,
+            .form-check-label a,
+            .powermail_fieldwrap_type_html a {
+                font-weight: normal;
+                color: var(--bs-body-color);
+            }
+
+            .form-check-label a,
+            .powermail_fieldwrap_type_html a {
+                text-decoration: underline;
+            }
+
+            label {
+                font-weight: bold;
+            }
+
+            .powermail_checkbox {
+                border-radius: 0;
+            }
+
+            .powermail_textarea {
+                height: 260px;
+                // border-color: $primary;
+            }
+
+            .powermail_fieldwrap {
+                &.powermail_fieldwrap_type_check {
+                    margin-top: 1.5rem;
+                }
+            }
+
+            .powermail_input,
+            .powermail_select,
+            .powermail_textarea,
+            .powermail_checkbox {
+                // border-color: $gray-500;
+            }
+
+            .powermail_fieldwrap_type_submit{
+                margin-top: #{map-get($spacers, 4)};
+            }
+        }
+    }
+
+    &.frame-layout-10 {
+        section.tx-powermail {
+            .powermail_form {
+                >.powermail_fieldset {
+                    display: flex;
+                    flex-direction: column;
+
+                    @include media-breakpoint-up(md) {
+                        flex-direction: row;
+                        align-items: center;
+                    }
+
+                    >legend {
+                        @include make-col(24);
+                        @include font-size($font-size-base * 1.25);
+                        line-height: 2.125rem;
+                        font-weight: 800;
+
+                        @include media-breakpoint-up(md) {
+                            @include make-col(4);
+                            margin-bottom: 0;
+                        }
+                    }
+
+                    >.row {
+                        @include make-col(24);
+
+                        @include media-breakpoint-down(md) {
+                            margin-left: 0 !important;
+                            margin-right: 0 !important;
+                        }
+
+                        @include media-breakpoint-up(md) {
+                            @include make-col(20);
+                            margin-left: 0 !important;
+                            margin-right: 0 !important;
+                            margin-bottom: 0 !important;
+
+                            .powermail_fieldwrap_type_submit {
+                                padding-right: 0;
+                            }
+                        }
+
+                        .powermail_fieldwrap {
+                            @include media-breakpoint-down(md) {
+                                padding-left: 0;
+                                padding-right: 0;
+                            }
+
+                            @include media-breakpoint-up(md) {
+                                margin-bottom: 0 !important;
+                            }
+
+                            .powermail_field {
+                                @include media-breakpoint-up(md) {
+                                    position: relative;
+
+                                    .powermail-errors-list {
+                                        &.filled {
+                                            position: absolute;
+                                            top: 100%;
+
+                                            >li {}
+                                        }
+                                    }
+                                }
+                            }
+
+                            &.powermail_fieldwrap_type_html {
+                                a {
+                                    font-weight: normal;
+                                    color: var(--bs-body-color);
+                                    text-decoration: underline;
+                                }
+                            }
+                        }
+
+                        .powermail_fieldwrap_e_mail {
+                            label {
+                                display: none;
+                            }
+                        }
+
+                        .powermail_fieldwrap_type_submit {
+                            text-align: right;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.frame-layout-20 {
+        section.tx-powermail {
+            .powermail_form {
+                >.powermail_fieldset {
+                    >.row {
+                        .powermail_fieldwrap_type_submit{
+                            margin-top: #{map-get($spacers, 4)};
+                        }
+                        .powermail_fieldwrap {
+                            &.powermail_fieldwrap_type_html {
+                                .powermail_field {
+                                    &.d-flex {
+                                        display: inline !important;
+                                    }
+
+                                    a {
+                                        padding: 0 !important;
+                                        font-weight: normal;
+                                        color: var(--bs-body-color);
+                                        text-decoration: underline;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

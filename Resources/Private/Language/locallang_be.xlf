@@ -18,6 +18,9 @@
             <trans-unit id="backend_layout.column.normal">
                 <source>Normal</source>
             </trans-unit>
+            <trans-unit id="TCEFORM.pages.layout.500">
+                <source>Dynamic contact partner</source>
+            </trans-unit>
             <trans-unit id="TCEFORM.tt_content.space_before_class.0">
                 <source>None</source>
             </trans-unit>
@@ -35,6 +38,33 @@
             </trans-unit>
             <trans-unit id="TCEFORM.tt_content.imageorient.26">
                 <source>Left</source>
+            </trans-unit>
+            <trans-unit id="TCEFORM.tx_powermail_domain_model_field.css.0">
+                <source>Default (50%)</source>
+            </trans-unit>
+            <trans-unit id="TCEFORM.tx_powermail_domain_model_field.css.10">
+                <source>Small (25% single row)</source>
+            </trans-unit>
+            <trans-unit id="TCEFORM.tx_powermail_domain_model_field.css.20">
+                <source>Placeholder (75%)</source>
+            </trans-unit>
+            <trans-unit id="TCEFORM.tx_powermail_domain_model_field.css.30">
+                <source>Full (100% single row)</source>
+            </trans-unit>
+            <trans-unit id="TCEFORM.tx_powermail_domain_model_field.css.40">
+                <source>Minimal (col-auto)</source>
+            </trans-unit>
+            <trans-unit id="TCEFORM.tx_powermail_domain_model_field.css.50">
+                <source>Fill up width (col)</source>
+            </trans-unit>
+            <trans-unit id="TCEFORM.powermail_pi1.layout.0">
+                <source>Default (Contact)</source>
+            </trans-unit>
+            <trans-unit id="TCEFORM.powermail_pi1.layout.10">
+                <source>Newsletter</source>
+            </trans-unit>
+            <trans-unit id="TCEFORM.powermail_pi1.layout.20">
+                <source>Contact (small)</source>
             </trans-unit>
         </body>
     </file>

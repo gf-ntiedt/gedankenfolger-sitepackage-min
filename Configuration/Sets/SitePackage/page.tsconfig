@@ -8,7 +8,12 @@ RTE {
 
 TCEFORM {
     pages {
-
+        layout{
+            removeItems = 1,2,3
+            addItems {
+                500 = LLL:EXT:gedankenfolger_sitepackage_min/Resources/Private/Language/locallang_be.xlf:TCEFORM.pages.layout.500
+            }
+        }
     }
     tt_content {
         frame_class.disabled = 1
@@ -43,6 +48,34 @@ TCEFORM {
                 26 = LLL:EXT:gedankenfolger_sitepackage_min/Resources/Private/Language/locallang_be.xlf:TCEFORM.tt_content.imageorient.26
             }
         }
+        layout{
+            types{
+                powermail_pi1{
+                    removeItems = 1,2,3
+                    altLabels{
+                        0 = LLL:EXT:gedankenfolger_sitepackage_min/Resources/Private/Language/locallang_be.xlf:TCEFORM.powermail_pi1.layout.0
+                    }
+                    addItems {
+                        10 = LLL:EXT:gedankenfolger_sitepackage_min/Resources/Private/Language/locallang_be.xlf:TCEFORM.powermail_pi1.layout.10
+                        20 = LLL:EXT:gedankenfolger_sitepackage_min/Resources/Private/Language/locallang_be.xlf:TCEFORM.powermail_pi1.layout.20
+                    }
+                }
+            }
+        }
+    }
+    # Powermail
+    tx_powermail_domain_model_field{
+        css{
+            removeItems = layout1, layout2, layout3
+            addItems{
+                col-md-12 = LLL:EXT:gedankenfolger_sitepackage_min/Resources/Private/Language/locallang_be.xlf:TCEFORM.tx_powermail_domain_model_field.css.0
+                col-md-6 = LLL:EXT:gedankenfolger_sitepackage_min/Resources/Private/Language/locallang_be.xlf:TCEFORM.tx_powermail_domain_model_field.css.10
+                col-md-18 = LLL:EXT:gedankenfolger_sitepackage_min/Resources/Private/Language/locallang_be.xlf:TCEFORM.tx_powermail_domain_model_field.css.20
+                col-md-20 = LLL:EXT:gedankenfolger_sitepackage_min/Resources/Private/Language/locallang_be.xlf:TCEFORM.tx_powermail_domain_model_field.css.30
+                col-md-auto = LLL:EXT:gedankenfolger_sitepackage_min/Resources/Private/Language/locallang_be.xlf:TCEFORM.tx_powermail_domain_model_field.css.40
+                col-md = LLL:EXT:gedankenfolger_sitepackage_min/Resources/Private/Language/locallang_be.xlf:TCEFORM.tx_powermail_domain_model_field.css.50
+            }
+        }
     }
 }
 
@@ -50,3 +83,38 @@ TCEMAIN {
 
 }
 
+tx_powermail.flexForm.predefinedReceivers.addFieldOptions{
+    receiversDev = Dev-Test
+    receiversmaxmustermann = Max Mustermann
+}
+
+
+### Non admin user restrictions
+[!backend.user.isAdmin]
+    TCEFORM {
+        pages{
+            ## Tab Appearance
+            newUntil.disabled = 1
+            content_from_pid.disabled = 1
+            ## Tab Behaviour
+            target.disabled = 1
+            cache_timeout.disabled = 1
+            cache_tags.disabled = 1
+            is_siteroot.disabled = 1
+            no_search.disabled = 1
+            php_tree_stop.disabled = 1
+            module.disabled = 1
+            ## Tab Resources
+            tsconfig_includes.disabled = 1
+            TSconfig.disabled = 1
+            ## Tab Access
+            fe_group.disabled = 1
+            editlock.disabled = 1
+        }
+        tt_content {
+            ## Tab Access
+            fe_group.disabled = 1
+            editlock.disabled = 1
+        }
+    }
+[end]

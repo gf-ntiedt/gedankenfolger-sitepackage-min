@@ -1,0 +1,13 @@
+@import 'EXT:powermail/Configuration/TypoScript/Main/Configuration/*.typoscript'
+
+plugin.tx_powermail.settings.setup{
+    styles.framework{
+        selectClasses = {$plugin.tx_powermail.settings.styles.framework.selectClasses}
+    }
+    receiver.predefinedReceiver {
+        receiversDev.email = TEXT
+        receiversDev.email.value = niels.tiedt@gedankenfolger.de
+        receiversmaxmustermann.email = TEXT
+        receiversmaxmustermann.email.value = niels.tiedt@gedankenfolger.de
+    }
+}
