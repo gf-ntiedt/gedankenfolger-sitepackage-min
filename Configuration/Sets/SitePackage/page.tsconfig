@@ -26,6 +26,8 @@ TCEFORM {
                 mt-3 = 3
                 mt-4 = 4
                 mt-5 = 5
+                mt-6 = 6
+                mt-7 = 7
             }
         }
         space_after_class {
@@ -37,6 +39,8 @@ TCEFORM {
                 mb-3 = 3
                 mb-4 = 4
                 mb-5 = 5
+                mt-6 = 6
+                mt-7 = 7
             }
         }
         imageorient {
