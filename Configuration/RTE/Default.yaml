@@ -1,42 +1,95 @@
+# Load default processing options
 imports:
-    - { resource: "EXT:rte_ckeditor/Configuration/RTE/Processing.yaml" }
-    - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml" }
-    - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml" }
-
+    - { resource: 'EXT:rte_ckeditor/Configuration/RTE/Processing.yaml' }
+    - { resource: 'EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml' }
+    - { resource: 'EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml' }
+    #- { resource: 'EXT:rte_ckeditor/Configuration/RTE/Editor/LinkBrowser.yaml' }
+# Additional optional TYPO3 specific configuration is available via ./Editor/LinkBrowser.yaml
+# See https://docs.typo3.org/c/typo3/cms-rte-ckeditor/main/en-us/Configuration/Reference.html
+#
+# The keys typing.transformations.extra.from and htmlSupport.allow.name allow
+# to have a special array with a key `pattern` that allows to specify Regular Expressions:
+# - { from: { pattern: '(typoscript|TYPOScript|typo3script)$' }, to: 'TypoScript' }
+# see https://docs.typo3.org/c/typo3/cms-core/main/en-us/Changelog/12.4.x/Important-104827-AllowToUseRegularExpressionsInCKEditorYAML.html
+#
+# Add configuration for the editor
+# For complete documentation see https://ckeditor.com/docs/ckeditor5/latest/features/index.html
 editor:
-    config:
-        contentsCss: "EXT:gedankenfolger_sitepackage_min/Resources/Public/Css/rte.css"
+  config:
+    contentsCss: "EXT:gedankenfolger_sitepackage_min/Resources/Public/Css/rte.css"
+    toolbar:
+      items:
+        - style
+        - heading
+        # grouping separator
+        - '|'
+        - bold
+        - italic
+        - subscript
+        - superscript
+        - softhyphen
+        - '|'
+        - bulletedList
+        - numberedList
+        - blockQuote
+        - alignment
+        - '|'
+        - findAndReplace
+        - link
+        - '|'
+        - removeFormat
+        - undo
+        - redo
+        - '|'
+        - insertTable
+        - '|'
+        - specialCharacters
+        - horizontalLine
+        - sourceEditing
 
-        stylesSet:
-            - { name: "Lead", element: "p", attributes: { 'class': 'lead' } }
+    heading:
+      options:
+        - { model: 'paragraph', title: 'Paragraph' }
+        - { model: 'heading1', view: 'h1', title: 'Heading 1' }
+        - { model: 'heading2', view: 'h2', title: 'Heading 2' }
+        - { model: 'heading3', view: 'h3', title: 'Heading 3' }
+        - { model: 'heading4', view: 'h4', title: 'Heading 4' }
+        - { model: 'heading5', view: 'h5', title: 'Heading 5' }
+        - { model: 'heading6', view: 'h6', title: 'Heading 6' }
 
-        toolbarGroups:
-            - { name: styles, groups: [ format, styles ] }
-            - { name: basicstyles, groups: [ basicstyles ] }
-            - { name: paragraph, groups: [ list, indent, blocks, align ] }
-            - "/"
-            - { name: links, groups: [ links ] }
-            - { name: clipboard, groups: [ clipboard, cleanup, undo ] }
-            - { name: editing, groups: [ spellchecker ] }
-            - { name: insert, groups: [ insert ] }
-            - { name: tools, groups: [ table, specialchar ] }
-            - { name: document, groups: [ mode ] }
+    style:
+      definitions:
+        - { name: "Lead", element: "p", classes: ['lead'] }
+        - { name: "Yellow", element: "p", classes: ['text-primary'] }
+        - { name: "Grey", element: "p", classes: ['text-secondary'] }
+        - { name: "Green", element: "p", classes: ['text-success'] }
+        - { name: "Blue", element: "p", classes: ['text-info'] }
+        - { name: "Orange", element: "p", classes: ['text-warning'] }
+        - { name: "Red", element: "p", classes: ['text-danger'] }
+        - { name: "Light grey", element: "p", classes: ['text-light'] }
+        - { name: "Dark grey", element: "p", classes: ['text-dark'] }
+        - { name: "Yellow", element: "a", classes: ['btn','btn-primary'] }
+        - { name: "Grey", element: "a", classes: ['btn','btn-secondary'] }
+        - { name: "Green", element: "a", classes: ['btn','btn-success'] }
+        - { name: "Blue", element: "a", classes: ['btn','btn-info'] }
+        - { name: "Orange", element: "a", classes: ['btn','btn-warning'] }
+        - { name: "Red", element: "a", classes: ['btn','btn-danger'] }
+        - { name: "Light grey", element: "a", classes: ['btn','btn-light'] }
+        - { name: "Dark grey", element: "a", classes: ['btn','btn-dark'] }
 
-        format_tags: "p;h1;h2;h3;h4;h5;pre"
+    alignment:
+      options:
+        - { name: 'left', className: 'text-start' }
+        - { name: 'center', className: 'text-center' }
+        - { name: 'right', className: 'text-end' }
+        - { name: 'justify', className: 'text-justify' }
 
-        justifyClasses:
-            - text-left
-            - text-center
-            - text-right
-            - text-justify
-
-        extraPlugins:
-            - justify
-
-        removePlugins:
-            - image
-
-        removeButtons:
-            - Anchor
-            - Underline
-            - Strike
+    table:
+      defaultHeadings: { rows: 1 }
+      contentToolbar:
+        - tableColumn
+        - tableRow
+        - mergeTableCells
+        - tableProperties
+        - tableCellProperties
+        - toggleTableCaption

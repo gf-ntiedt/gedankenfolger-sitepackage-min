@@ -10,7 +10,7 @@ fields:
     identifier: bodytext
     useExistingField: true
     enableRichtext: true
-    richtextConfiguration: full
+    richtextConfiguration: gedankenfolger_sitepackage_min
   -
     identifier: tab_media
     type: Tab

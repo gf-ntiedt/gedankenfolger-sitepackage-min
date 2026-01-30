@@ -10,6 +10,6 @@ fields:
     identifier: bodytext
     useExistingField: true
     enableRichtext: true
-    richtextConfiguration: full
+    richtextConfiguration: gedankenfolger_sitepackage_min
   - identifier: Gedankenfolger/Appearance
     type: Basic
