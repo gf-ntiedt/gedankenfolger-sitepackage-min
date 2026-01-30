@@ -11,5 +11,19 @@
         <f:render partial="Header/All" arguments="{_all}" />
         
         <f:format.html>{data.bodytext}</f:format.html>
+        <f:if condition="{data.header_link}">
+            {data.header_link -> f:debug()}
+        
+            <f:link.typolink parameter="{data.header_link.url}" target="{data.header_link.target}"
+                title="{data.header_link.title}" class="btn btn-primary">
+                <f:if condition="{data.header_link.title}">
+                    <f:then>
+                        {data.header_link.title}
+                    </f:then>
+                    <f:else>
+                        <f:translate key="more-link" extensionName="GedankenfolgerSitepackageMin" />
+                    </f:else>
+                </f:if>
+            </f:link.typolink>
     </div>
 </html>

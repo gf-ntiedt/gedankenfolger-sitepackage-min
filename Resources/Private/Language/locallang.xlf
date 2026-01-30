@@ -18,6 +18,9 @@
             <trans-unit id="next">
                 <source>Next</source>
             </trans-unit>
+            <trans-unit id="more-link">
+                <source>Read more</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>
