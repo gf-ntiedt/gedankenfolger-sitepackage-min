@@ -18,6 +18,7 @@
                 <li class="list-group-item">
                     <be:link.editRecord uid="{data.uid}" table="tt_content" fields="bodytext" class="btn btn-sm btn-default btn-borderless">
                         <core:icon identifier="actions-open" size="small" />
+                        <f:translate key="LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:bodytext_formlabel" />
                     </be:link.editRecord>
                     <be:link.editRecord uid="{data.uid}" table="tt_content" fields="bodytext">
                         <span>{data.bodytext -> f:format.raw()}</span>
@@ -28,6 +29,7 @@
                 <li class="list-group-item d-flex justify-content-between">
                     <be:link.editRecord uid="{data.uid}" table="sys_file_reference" fields="assets"class="btn btn-sm btn-default btn-borderless">
                         <core:icon identifier="actions-open" size="small" />
+                        <f:translate key="LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:asset_references" />
                     </be:link.editRecord>
                     <div class="list-group flex-row w-100">
                         <f:for each="{data.assets}" as="asset">
@@ -38,6 +40,18 @@
                             </f:if>
                         </f:for>
                     </div>
+                </li>
+            </f:if>
+
+            <f:if condition="{data.header_link.url}">
+                <li class="list-group-item">
+                    <be:link.editRecord uid="{data.uid}" table="tt_content" fields="header_link" class="btn btn-sm btn-default btn-borderless">
+                        <core:icon identifier="actions-open" size="small" />
+                        <f:translate key="LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_link" />
+                    </be:link.editRecord>
+                    <be:link.editRecord uid="{data.uid}" table="tt_content" fields="header_link" class="btn btn-default btn-sm">
+                        <span>{data.header_link.url}</span>
+                    </be:link.editRecord>
                 </li>
             </f:if>
         </ul>

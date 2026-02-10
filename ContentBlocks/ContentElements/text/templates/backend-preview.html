@@ -18,12 +18,26 @@
     <div id="c{data.uid}" class="{data.CType}">
         <ul class="list-group">
             <f:if condition="{data.bodytext}">
-                <li class="list-group-item d-flex justify-content-between">
+                <li class="list-group-item">
                     <be:link.editRecord uid="{data.uid}" table="tt_content" fields="bodytext">
-                        <f:translate key="{cb:languagePath()}:bodytext.label" />
+                        <core:icon identifier="actions-open" size="small" />
+                        <f:translate key="LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:bodytext_formlabel" />
                     </be:link.editRecord>
                     <be:link.editRecord uid="{data.uid}" table="tt_content" fields="bodytext">
                         <span>{data.bodytext -> f:format.raw()}</span>
+                    </be:link.editRecord>
+                </li>
+            </f:if>
+            
+
+            <f:if condition="{data.header_link.url}">
+                <li class="list-group-item">
+                    <be:link.editRecord uid="{data.uid}" table="tt_content" fields="header_link" class="btn btn-sm btn-default btn-borderless">
+                        <core:icon identifier="actions-open" size="small" />
+                        <f:translate key="LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_link" />
+                    </be:link.editRecord>
+                    <be:link.editRecord uid="{data.uid}" table="tt_content" fields="header_link" class="btn btn-default btn-sm">
+                        <span>{data.header_link.url}</span>
                     </be:link.editRecord>
                 </li>
             </f:if>
