@@ -6,3 +6,14 @@ fields:
   -
     identifier: imageorient
     useExistingField: true
+  -
+    identifier: display
+    label: Display
+    type: Select
+    renderType: selectSingle
+    default: 'Slider'
+    items:
+      - label: 'Thumbnail'
+        value: 'Thumbnail'
+      - label: 'Slider'
+        value: 'Slider'

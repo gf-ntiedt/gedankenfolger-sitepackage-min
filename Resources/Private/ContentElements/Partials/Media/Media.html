@@ -7,29 +7,52 @@
                     arguments="{asset: data.assets.0, dimensions: dimensions, data: data, settings: settings}" />
             </f:then>
             <f:else>
-                <div id="carousel-media-{data.uid}" class="carousel carousel-dark slide">
-                    <div class="carousel-indicators">
-                        <f:for each="{data.assets}" as="asset" iteration="iterator">
-                            <button type="button" data-bs-target="#carousel-media-{data.uid}" data-bs-slide-to="{iterator.index}" class="{f:if(condition: iterator.isFirst, then:'active')}" aria-current="{f:if(condition: iterator.isFirst, then:'true')}" aria-label="{f:if(condition:asset.title,then:asset.title,else:' Slide {iterator.cycle}')}"></button>
-                        </f:for>
-                    </div>
-                    <div class="carousel-inner">
-                        <f:for each="{data.assets}" as="asset" iteration="iterator">
-                            <div class="carousel-item {f:if(condition: iterator.isFirst, then:'active')}">
-                                <f:render partial="Media/Type" arguments="{asset: asset, dimensions: dimensions, data: data, settings: settings,layout:'carousel'}" />
-                            </div>
-                        </f:for>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carousel-media-{data.uid}" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">{f:translate(key:'prev',extensionName:'GedankenfolgerSitepackageMin')}</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carousel-media-{data.uid}" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">{f:translate(key:'next',extensionName:'GedankenfolgerSitepackageMin')}</span>
-                    </button>
-                </div>
+                <f:if condition="{data.display}">
+                    <f:render section="{data.display}" arguments="{_all}" />
+                </f:if>
             </f:else>
         </f:if>
     </f:if>
+
+
+    <f:section name="Thumbnail">
+        <div class="d-flex">
+            <f:for each="{data.assets}" as="asset" iteration="iterator">
+
+                <f:render partial="Media/Type"
+                    arguments="{asset: asset, dimensions: dimensions, data: data, settings: settings, layout:'thumbnail'}" />
+            </f:for>
+        </div>
+    </f:section>
+
+    <f:section name="Slider">
+        <div id="carousel-media-{data.uid}" class="carousel carousel-dark slide">
+            <div class="carousel-indicators">
+                <f:for each="{data.assets}" as="asset" iteration="iterator">
+                    <button type="button" data-bs-target="#carousel-media-{data.uid}" data-bs-slide-to="{iterator.index}"
+                        class="{f:if(condition: iterator.isFirst, then:'active')}"
+                        aria-current="{f:if(condition: iterator.isFirst, then:'true')}"
+                        aria-label="{f:if(condition:asset.title,then:asset.title,else:' Slide {iterator.cycle}')}"></button>
+                </f:for>
+            </div>
+            <div class="carousel-inner">
+                <f:for each="{data.assets}" as="asset" iteration="iterator">
+                    <div class="carousel-item {f:if(condition: iterator.isFirst, then:'active')}">
+                        <f:render partial="Media/Type"
+                            arguments="{asset: asset, dimensions: dimensions, data: data, settings: settings,layout:'carousel'}" />
+                    </div>
+                </f:for>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carousel-media-{data.uid}"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">{f:translate(key:'prev',extensionName:'GedankenfolgerSitepackageMin')}</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carousel-media-{data.uid}"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">{f:translate(key:'next',extensionName:'GedankenfolgerSitepackageMin')}</span>
+            </button>
+        </div>
+    </f:section>
 </html>
