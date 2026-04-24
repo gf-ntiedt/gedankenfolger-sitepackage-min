@@ -6,15 +6,17 @@ namespace Gedankenfolger\GedankenfolgerSitepackageMin\Dashboard\Widget;
 
 use Gedankenfolger\GedankenfolgerSitepackageMin\Service\ContentBlocksFinder;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Core\View\ViewFactoryData;
+use TYPO3\CMS\Core\View\ViewFactoryInterface;
 use TYPO3\CMS\Dashboard\Widgets\WidgetConfigurationInterface;
 use TYPO3\CMS\Dashboard\Widgets\WidgetInterface;
-use TYPO3\CMS\Fluid\View\StandaloneView;
 
 final class ContentBlocksWidget implements WidgetInterface
 {
     public function __construct(
         private readonly WidgetConfigurationInterface $configuration,
         private readonly ContentBlocksFinder $finder,
+        private readonly ViewFactoryInterface $viewFactory,
         private readonly array $options = [],
     ) {}
 
@@ -44,12 +46,11 @@ final class ContentBlocksWidget implements WidgetInterface
             }
         }
 
-        $view = GeneralUtility::makeInstance(StandaloneView::class);
-        $view->setTemplatePathAndFilename(
-            GeneralUtility::getFileAbsFileName(
+        $view = $this->viewFactory->create(new ViewFactoryData(
+            templatePathAndFilename: GeneralUtility::getFileAbsFileName(
                 'EXT:gedankenfolger_sitepackage_min/Resources/Private/Templates/Dashboard/ContentBlocksWidget.html'
-            )
-        );
+            ),
+        ));
 
         $view->assignMultiple([
             'grouped' => $grouped,
