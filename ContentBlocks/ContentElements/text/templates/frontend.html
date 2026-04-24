@@ -9,7 +9,7 @@
             <a id="c{data._LOCALIZED_UID}"></a>
         </f:if>
         <f:render partial="Header/All" arguments="{_all}" />
-        
+
         <f:format.html>{data.bodytext}</f:format.html>
         <f:if condition="{data.header_link}">
             <f:link.typolink parameter="{data.header_link.url}" target="{data.header_link.target}"
@@ -23,5 +23,6 @@
                     </f:else>
                 </f:if>
             </f:link.typolink>
+        </f:if>
     </div>
 </html>

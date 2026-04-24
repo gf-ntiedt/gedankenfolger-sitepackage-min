@@ -6,6 +6,7 @@ namespace Gedankenfolger\GedankenfolgerSitepackageMin\Service;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Yaml\Yaml;
 use TYPO3\CMS\Core\Authentication\BackendUserAuthentication;
+use TYPO3\CMS\Core\Localization\LanguageService;
 use TYPO3\CMS\Core\Database\Connection;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Database\Query\Restriction\DeletedRestriction;
@@ -466,9 +467,10 @@ final class ContentBlocksFinder
             }
         }
 
-        if (isset($GLOBALS['LANG']) && is_object($GLOBALS['LANG']) && property_exists($GLOBALS['LANG'], 'lang')) {
-            $lang = (string)$GLOBALS['LANG']->lang;
-            if ($lang !== '') {
+        $langService = $GLOBALS['LANG'] ?? null;
+        if ($langService instanceof LanguageService) {
+            $lang = $langService->getLocale()->getLanguageCode();
+            if ($lang !== '' && $lang !== 'und') {
                 return $lang;
             }
         }

@@ -7,7 +7,6 @@ fields:
   -
     identifier: TYPO3/Header
     type: Basic
-    useExistingField: true
 
   - identifier: addresses_sys_record
     type: Relation
@@ -47,4 +46,4 @@ fields:
     type: Checkbox
     renderType: checkboxToggle
     label: 'Slider: Search'
-    default: '0'
+    default: 0
