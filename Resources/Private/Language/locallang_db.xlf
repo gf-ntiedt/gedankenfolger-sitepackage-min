@@ -6,6 +6,9 @@
             <authorEmail>niels.tiedt@gedankenfolger.de</authorEmail>
         </header>
         <body>
+            <trans-unit id="extension.title">
+                <source>Gedankenfolger</source>
+            </trans-unit>
             <trans-unit id="pages.gedankenfolger_nav_main">
                 <source>Main-Navigation</source>
             </trans-unit>
