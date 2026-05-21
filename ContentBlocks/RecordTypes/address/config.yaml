@@ -30,14 +30,12 @@ fields:
     identifier: logo
     type: File
     label: Logo
-    appearance:
-      - allowedFileExtensions: "jpg,gif,png,webp"
+    allowed: "jpg,gif,png,webp"
   -
     identifier: assets
     type: File
     label: Assets
-    appearance:
-      - allowedFileExtensions: "jpg,gif,png,webp"
+    allowed: "jpg,gif,png,webp"
   -
     identifier: tab_contactdata
     type: Tab
