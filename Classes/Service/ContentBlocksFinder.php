@@ -69,13 +69,13 @@ final class ContentBlocksFinder
      *   typeName: string|null,
      *   configPath: string,
      *   usagePages: array<int, array{
-     *     uid:int,
-     *     title:string,
-     *     count:int,
-     *     sys_language_uid?:int,
-     *     l18n_parent?:int,
-     *     contentRecords?:array<int, array{uid:int,header:string,CType:string,sys_language_uid:int,l18n_parent:int}>
-     *     uidsTruncated?:bool
+     *     uid: int,
+     *     title: string,
+     *     count: int,
+     *     sys_language_uid?: int,
+     *     l18n_parent?: int,
+     *     contentRecords?: array<int, array{uid: int, header: string, CType: string, sys_language_uid: int, l18n_parent: int}>,
+     *     uidsTruncated?: bool
      *   }>
      * }>
      */

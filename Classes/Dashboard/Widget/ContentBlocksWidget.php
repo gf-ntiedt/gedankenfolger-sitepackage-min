@@ -34,7 +34,7 @@ final class ContentBlocksWidget implements WidgetInterface
         ];
 
         foreach ($items as $item) {
-            $type = (string)($item['contentType'] ?? '');
+            $type = (string)$item['contentType'];
             if ($type === 'ContentElement') {
                 $grouped['ContentElements'][] = $item;
             } elseif ($type === 'PageType') {
