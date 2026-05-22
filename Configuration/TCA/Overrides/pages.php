@@ -1,4 +1,5 @@
 <?php
+
 defined('TYPO3') or die();
 
 $tempColumnsAfterTitle = [
@@ -61,7 +62,6 @@ $tempColumnsAfterMedia = [
     '',
     'after:media'
 );
-
 
 /* T3AI */
 $GLOBALS['TCA']['pages']['columns']['title']['l10n_mode'] = 'prefixLangTitle';

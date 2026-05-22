@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Gedankenfolger\GedankenfolgerSitepackageMin\Service;
@@ -6,10 +7,10 @@ namespace Gedankenfolger\GedankenfolgerSitepackageMin\Service;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Yaml\Yaml;
 use TYPO3\CMS\Core\Authentication\BackendUserAuthentication;
-use TYPO3\CMS\Core\Localization\LanguageService;
 use TYPO3\CMS\Core\Database\Connection;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Database\Query\Restriction\DeletedRestriction;
+use TYPO3\CMS\Core\Localization\LanguageService;
 use TYPO3\CMS\Core\Package\PackageManager;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
@@ -70,13 +71,13 @@ final class ContentBlocksFinder
      *   typeName: string|null,
      *   configPath: string,
      *   usagePages: array<int, array{
-     *     uid:int,
-     *     title:string,
-     *     count:int,
-     *     sys_language_uid?:int,
-     *     l18n_parent?:int,
-     *     contentRecords?:array<int, array{uid:int,header:string,CType:string,sys_language_uid:int,l18n_parent:int}>
-     *     uidsTruncated?:bool
+     *     uid: int,
+     *     title: string,
+     *     count: int,
+     *     sys_language_uid?: int,
+     *     l18n_parent?: int,
+     *     contentRecords?: array<int, array{uid: int, header: string, CType: string, sys_language_uid: int, l18n_parent: int}>,
+     *     uidsTruncated?: bool
      *   }>
      * }>
      */

@@ -1,4 +1,5 @@
 <?php
+
 // Configuration/Icons.php
 declare(strict_types=1);
 
