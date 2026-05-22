@@ -1,0 +1,12 @@
+{
+  "name": "gedankenfolger-sitepackage-min",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "lint:scss": "stylelint \"Resources/Public/Scss/**/*.scss\""
+  },
+  "devDependencies": {
+    "stylelint": "^17.12.0",
+    "stylelint-config-standard-scss": "^17.0.0"
+  }
+}
