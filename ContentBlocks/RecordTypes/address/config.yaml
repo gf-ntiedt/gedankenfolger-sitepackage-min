@@ -30,7 +30,7 @@ fields:
     identifier: logo
     type: File
     label: Logo
-    allowed: "jpg,gif,png,webp"
+    allowed: "jpg,gif,png,webp,svg"
   -
     identifier: assets
     type: File
