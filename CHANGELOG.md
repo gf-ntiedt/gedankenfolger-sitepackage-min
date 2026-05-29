@@ -1,6 +1,31 @@
 # Changelog
 
 All notable changes to this project will be documented in this file.
+## [13.4.5] - 2026-05-29
+
+### Documentation
+
+- **readme:** Add proper readme structure with changelog and acknowledgements sections (497bdcf)
+
+
+## [13.4.3] - 2026-05-22
+
+### Fixed
+
+- **address:** Use correct 'allowed' property for File fields in ContentBlocks config (9ba325e)
+
+- **locallang:** Add extension.title to control new-record wizard group label (1bf578e)
+
+- Define $_EXTKEY, fix PHPDoc array shape spaces, remove redundant null-coalesce (47b0a1a)
+
+
+## [13.4.2] - 2026-05-21
+
+### Fixed
+
+- Remove inline gfv namespace declarations from templates (07f37fa)
+
+
 ## [13.4.3] - 2026-05-22
 
 ### Fixed
