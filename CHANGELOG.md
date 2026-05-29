@@ -1,6 +1,55 @@
 # Changelog
 
 All notable changes to this project will be documented in this file.
+## [14.0.4] - 2026-05-29
+
+### Documentation
+
+- **readme:** Add proper readme structure with changelog and acknowledgements sections (4e25670)
+
+
+## [14.0.3] - 2026-05-28
+
+### Fixed
+
+- **address:** Allow svg for logo field (b7b4c26)
+
+
+## [14.0.2] - 2026-05-22
+
+### Added
+
+- **stylelint:** Add stylelint with SCSS standard config (8c23deb)
+
+
+### Changed
+
+- Apply TYPO3 CGL via php-cs-fixer (phpdoc, formatting) (861be43)
+
+
+### Fixed
+
+- **locallang:** Add extension.title to control new-record wizard group label (f60376d)
+
+
+## [14.0.1] - 2026-05-21
+
+### Fixed
+
+- Remove inline gfv namespace declarations from templates (73ce291)
+
+
+## [14.0.0] - 2026-04-24
+
+### Miscellaneous
+
+- Migrate from v13 to v14 (remove unnecessary and deprecated files and folder) (5e3f908)
+
+- Migrate from v13 to v14 (deprecations and errors) (02389f5)
+
+- Migrate from v13 to v14 (deprecations and errors) (303e02a)
+
+
 ## [14.0.3] - 2026-05-28
 
 ### Fixed
