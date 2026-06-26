@@ -41,7 +41,7 @@
             <f:translate key="{cb:languagePath(name: 'gedankenfolger/address')}:phone.label" />
         </f:variable>
         {label}:
-        <gfv:link.urlscheme number="{address.data.phone}" aria="{label: label}" class="link-white" /><br />
+        <gfv:link.tel number="{address.data.phone}" aria="{label: label}" class="link-white" /><br />
     </f:if>
 </f:section>
 
@@ -51,7 +51,7 @@
             <f:translate key="{cb:languagePath(name: 'gedankenfolger/address')}:fax.label" />
         </f:variable>
         {label}:
-        <gfv:link.urlscheme number="{address.data.fax}" aria="{label: label}" class="link-white" /><br />
+        <gfv:link.tel number="{address.data.fax}" aria="{label: label}" class="link-white" /><br />
     </f:if>
 </f:section>
 

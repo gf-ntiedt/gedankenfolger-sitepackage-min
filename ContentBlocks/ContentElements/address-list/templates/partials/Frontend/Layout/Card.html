@@ -38,14 +38,14 @@
             <div class="list-group list-group-flush">
                 <f:if condition="{phone}">
                     <f:variable name="label" value="{f:translate(key:'{cb:languagePath(name: \'gedankenfolger/address\')}:phone.label')}" />
-                    <gfv:link.urlscheme
+                    <gfv:link.tel
                         number="{phone}"
                         aria="{label: label}"
-                        class="list-group-item list-group-item-action list-group-item-light"><i class="fa-solid fa-at"></i> {typoLinkParts}</gfv:link.urlscheme>
+                        class="list-group-item list-group-item-action list-group-item-light"><i class="fa-solid fa-at"></i> {typoLinkParts}</gfv:link.tel>
                 </f:if>
                 <f:if condition="{fax}">
                     <f:variable name="label" value="{f:translate(key:'{cb:languagePath(name: \'gedankenfolger/address\')}:fax.label')}" />
-                    <gfv:link.urlscheme
+                    <gfv:link.tel
                         number="{fax}"
                         scheme="fax:"
                         aria="{label: label}"
