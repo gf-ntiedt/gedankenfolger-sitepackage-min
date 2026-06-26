@@ -1,6 +1,13 @@
 # Changelog
 
 All notable changes to this project will be documented in this file.
+## [14.0.5] - 2026-06-26
+
+### Changed
+
+- **templates:** Migrate gfv:link.urlscheme to gfv:link.tel (2a68e05)
+
+
 ## [14.0.4] - 2026-05-29
 
 ### Documentation
