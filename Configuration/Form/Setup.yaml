@@ -1,0 +1,6 @@
+TYPO3:
+  CMS:
+    Form:
+      persistenceManager:
+        allowedExtensionPaths:
+          1783939996: EXT:gedankenfolger_sitepackage_min/Resources/Private/Forms/

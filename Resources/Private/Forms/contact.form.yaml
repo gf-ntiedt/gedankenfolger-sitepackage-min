@@ -1,0 +1,129 @@
+identifier: contact
+label: 'Contact form'
+prototypeName: standard
+type: Form
+renderingOptions:
+  translation:
+    translationFiles:
+      20: 'EXT:gedankenfolger_sitepackage_min/Resources/Private/Language/locallang_form.xlf'
+finishers:
+  -
+    identifier: EmailToReceiver
+    options:
+      subject: 'New contact request: {subject}'
+      # Placeholder recipients — replace with real addresses per project.
+      # Multiple recipients are supported as a map of address: name pairs.
+      recipients:
+        office@example.com: 'Example Company'
+        sales@example.com: 'Sales Team'
+      senderAddress: noreply@example.com
+      senderName: 'Example Company Contact Form'
+      replyToRecipients:
+        '{email}': '{first_name} {last_name}'
+  -
+    identifier: EmailToSender
+    options:
+      subject: 'We received your message'
+      recipients:
+        '{email}': '{first_name} {last_name}'
+      senderAddress: noreply@example.com
+      senderName: 'Example Company Contact Form'
+  -
+    identifier: Confirmation
+    options:
+      message: 'Thank you for your message. We will get back to you as soon as possible.'
+renderables:
+  -
+    identifier: page-1
+    label: 'Your details'
+    type: Page
+    renderables:
+      -
+        identifier: salutation
+        label: Salutation
+        type: SingleSelect
+        defaultValue: mr
+        properties:
+          options:
+            ms: Ms.
+            mr: Mr.
+            diverse: Mx.
+      -
+        identifier: first_name
+        label: 'First name'
+        type: Text
+        properties:
+          fluidAdditionalAttributes:
+            required: required
+        validators:
+          -
+            identifier: NotEmpty
+      -
+        identifier: last_name
+        label: 'Last name'
+        type: Text
+        properties:
+          fluidAdditionalAttributes:
+            required: required
+        validators:
+          -
+            identifier: NotEmpty
+      -
+        identifier: email
+        label: 'Email address'
+        type: Email
+        properties:
+          fluidAdditionalAttributes:
+            required: required
+        validators:
+          -
+            identifier: NotEmpty
+          -
+            identifier: EmailAddress
+      -
+        identifier: phone
+        label: Phone
+        type: Text
+      -
+        identifier: company
+        label: Company
+        type: Text
+      -
+        identifier: subject
+        label: Subject
+        type: SingleSelect
+        defaultValue: general
+        properties:
+          options:
+            general: 'General inquiry'
+            quote: 'Request a quote'
+            support: 'Support request'
+            other: Other
+        validators:
+          -
+            identifier: NotEmpty
+      -
+        identifier: message
+        label: Message
+        type: Textarea
+        properties:
+          rows: 8
+          fluidAdditionalAttributes:
+            required: required
+        validators:
+          -
+            identifier: NotEmpty
+      -
+        identifier: privacy_note
+        label: Privacy
+        type: StaticText
+        properties:
+          text: >-
+            The information you provide will be used exclusively to process
+            your inquiry. For details, please see our <a href="t3://page?uid=8">privacy policy</a>.
+  -
+    identifier: summary
+    label: Summary
+    type: SummaryPage
+    renderingOptions:
+      nextButtonLabel: 'Send message'
