@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file datatype="plaintext" original="locallang_form.xlf" source-language="en" target-language="de" product-name="gedankenfolger_sitepackage_min">
+    <header/>
+    <body>
+      <trans-unit id="contact.label">
+        <target>Kontaktformular</target>
+      </trans-unit>
+      <trans-unit id="contact.element.page-1.properties.label">
+        <target>Ihre Angaben</target>
+      </trans-unit>
+      <trans-unit id="contact.element.salutation.properties.label">
+        <target>Anrede</target>
+      </trans-unit>
+      <trans-unit id="contact.element.salutation.properties.options.mr">
+        <target>Herr</target>
+      </trans-unit>
+      <trans-unit id="contact.element.salutation.properties.options.ms">
+        <target>Frau</target>
+      </trans-unit>
+      <trans-unit id="contact.element.salutation.properties.options.diverse">
+        <target>Divers</target>
+      </trans-unit>
+      <trans-unit id="contact.element.first_name.properties.label">
+        <target>Vorname</target>
+      </trans-unit>
+      <trans-unit id="contact.element.last_name.properties.label">
+        <target>Nachname</target>
+      </trans-unit>
+      <trans-unit id="contact.element.email.properties.label">
+        <target>E-Mail-Adresse</target>
+      </trans-unit>
+      <trans-unit id="contact.element.phone.properties.label">
+        <target>Telefon</target>
+      </trans-unit>
+      <trans-unit id="contact.element.company.properties.label">
+        <target>Unternehmen</target>
+      </trans-unit>
+      <trans-unit id="contact.element.subject.properties.label">
+        <target>Betreff</target>
+      </trans-unit>
+      <trans-unit id="contact.element.subject.properties.options.general">
+        <target>Allgemeine Anfrage</target>
+      </trans-unit>
+      <trans-unit id="contact.element.subject.properties.options.quote">
+        <target>Angebotsanfrage</target>
+      </trans-unit>
+      <trans-unit id="contact.element.subject.properties.options.support">
+        <target>Support-Anfrage</target>
+      </trans-unit>
+      <trans-unit id="contact.element.subject.properties.options.other">
+        <target>Sonstiges</target>
+      </trans-unit>
+      <trans-unit id="contact.element.message.properties.label">
+        <target>Nachricht</target>
+      </trans-unit>
+      <trans-unit id="contact.element.privacy_note.properties.text">
+        <target>Ihre Angaben werden ausschließlich zur Bearbeitung Ihrer Anfrage verwendet. Details finden Sie in unserer &lt;a href="t3://page?uid=8"&gt;Datenschutzerklärung&lt;/a&gt;.</target>
+      </trans-unit>
+      <trans-unit id="contact.element.summary.properties.label">
+        <target>Zusammenfassung</target>
+      </trans-unit>
+      <trans-unit id="contact.element.summary.properties.renderingOptions.nextButtonLabel">
+        <target>Nachricht senden</target>
+      </trans-unit>
+      <trans-unit id="finisher.EmailToReceiver.subject">
+        <target>Neue Kontaktanfrage: {subject}</target>
+      </trans-unit>
+      <trans-unit id="finisher.EmailToSender.subject">
+        <target>Wir haben Ihre Nachricht erhalten</target>
+      </trans-unit>
+      <trans-unit id="finisher.Confirmation.message">
+        <target>Vielen Dank für Ihre Nachricht. Wir melden uns so schnell wie möglich bei Ihnen.</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
