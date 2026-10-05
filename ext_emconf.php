@@ -1,7 +1,5 @@
 <?php
 
-$_EXTKEY = 'gedankenfolger_sitepackage_min';
-
 $EM_CONF[$_EXTKEY] = [
     'title' => 'Gedankenfolger sitepackage min',
     'description' => 'For development',
