@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [13.6.1] - 2026-10-06
+
+### Miscellaneous
+
+- **composer:** Declare php ^8.2 as minimum version (5fe46df)
+
+
 ## [13.6.0] - 2026-10-06
 
 ### Added
