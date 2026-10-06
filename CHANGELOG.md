@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [13.6.0] - 2026-10-06
+
+### Added
+
+- **form:** Add contact form with translations and form framework registration (a58bd7e)
+
+
 ## [13.5.0] - 2026-10-05
 
 ### Added
