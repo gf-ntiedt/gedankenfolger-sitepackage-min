@@ -47,4 +47,4 @@ fields:
     type: Checkbox
     renderType: checkboxToggle
     label: 'Slider: Search'
-    default: '0'
+    default: 0
