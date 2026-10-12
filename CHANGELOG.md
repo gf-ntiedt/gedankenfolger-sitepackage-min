@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [14.1.2] - 2026-10-12
+
+### Fixed
+
+- **license:** Replace GPLv3 text with GPLv2 to match composer.json (e495936)
+
+
+### Miscellaneous
+
+- **css:** Update source map mappings in compiled bootstrap.css (233ef39)
+
+
 ## [14.1.1] - 2026-10-06
 
 ### Miscellaneous
