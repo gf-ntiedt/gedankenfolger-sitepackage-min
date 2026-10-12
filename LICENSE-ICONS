@@ -1,0 +1,45 @@
+Icon License
+============
+
+This file covers the licensing of all graphic assets bundled
+with this extension. Two categories apply:
+
+──────────────────────────────────────────────────────────────
+1. TYPO3 CORE ICONS
+──────────────────────────────────────────────────────────────
+Icons sourced from the official TYPO3 icon set.
+
+For license details see:
+https://github.com/TYPO3/TYPO3.Icons/blob/main/LICENSE
+
+──────────────────────────────────────────────────────────────
+2. GEDANKENFOLGER LOGO & PROPRIETARY GRAPHIC ASSETS
+──────────────────────────────────────────────────────────────
+The Gedankenfolger® logo and all custom-designed icons and
+graphic assets created by or for Gedankenfolger® GmbH are
+proprietary and subject to the following terms:
+
+  Copyright (c) 2026 Gedankenfolger® GmbH
+  All rights reserved.
+
+  1. PERMITTED USE
+     These assets may only be used as part of the
+     gedankenfolger-sitepackage-min TYPO3 extension.
+
+  2. NO MODIFICATION
+     Modification, adaptation, or creation of derivative works
+     based on these assets is strictly prohibited.
+
+  3. NO REDISTRIBUTION
+     Redistribution of these assets, in original or modified
+     form, outside of the gedankenfolger-sitepackage-min TYPO3 extension
+     is not permitted.
+
+  4. NO SUBLICENSING
+     These assets may not be sublicensed, sold, or transferred
+     to third parties.
+
+  In forks or derivatives of this extension, all proprietary
+  assets must be removed or replaced with non-protected
+  alternatives, unless explicit written consent has been
+  granted by Gedankenfolger® GmbH.
