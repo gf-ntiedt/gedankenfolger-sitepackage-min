@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [13.6.2] - 2026-10-12
+
+### Fixed
+
+- **address-list:** Use integer default for the search checkbox field (8a5fa0d)
+
+- **license:** Replace GPLv3 text with GPLv2 to match composer.json (72c9f3d)
+
+
+### Miscellaneous
+
+- **css:** Update compiled bootstrap.css (0eec914)
+
+
 ## [13.6.1] - 2026-10-06
 
 ### Miscellaneous
