@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## [13.6.3] - 2026-10-12
+
+### Documentation
+
+- **license:** Add LICENSE-ICONS covering the bundled logo and graphic assets (66b65dc)
+
+- **readme:** Add notice on logo and trademark use with link to LICENSE-ICONS (9825808)
+
+
 ## [13.6.2] - 2026-10-12
 
 ### Fixed
