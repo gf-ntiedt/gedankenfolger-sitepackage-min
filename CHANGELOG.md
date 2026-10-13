@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [14.1.4] - 2026-10-13
+
+### Fixed
+
+- **license:** Replace outdated GPL v2 text with the current version from gnu.org (f7d5032)
+
+
 ## [14.1.3] - 2026-10-12
 
 ### Documentation
